@@ -1,0 +1,110 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/9-30-club",
+      "destination": "/9-30-club.html"
+    },
+    {
+      "source": "/black-cat-dc9",
+      "destination": "/black-cat-dc9.html"
+    },
+    {
+      "source": "/bossa-bistro",
+      "destination": "/bossa-bistro.html"
+    },
+    {
+      "source": "/cafe-citron",
+      "destination": "/cafe-citron.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/culture",
+      "destination": "/culture.html"
+    },
+    {
+      "source": "/dans-cafe",
+      "destination": "/dans-cafe.html"
+    },
+    {
+      "source": "/decades",
+      "destination": "/decades.html"
+    },
+    {
+      "source": "/district-alley-on-h",
+      "destination": "/district-alley-on-h.html"
+    },
+    {
+      "source": "/echostage",
+      "destination": "/echostage.html"
+    },
+    {
+      "source": "/flash",
+      "destination": "/flash.html"
+    },
+    {
+      "source": "/focus-social-club",
+      "destination": "/focus-social-club.html"
+    },
+    {
+      "source": "/grand-central",
+      "destination": "/grand-central.html"
+    },
+    {
+      "source": "/heaven-and-hell",
+      "destination": "/heaven-and-hell.html"
+    },
+    {
+      "source": "/jimmy-valentines-lonely-hearts-club",
+      "destination": "/jimmy-valentines-lonely-hearts-club.html"
+    },
+    {
+      "source": "/johnny-pistolas",
+      "destination": "/johnny-pistolas.html"
+    },
+    {
+      "source": "/little-miss-whiskey-s-golden-dollar",
+      "destination": "/little-miss-whiskey-s-golden-dollar.html"
+    },
+    {
+      "source": "/madams-organ",
+      "destination": "/madams-organ.html"
+    },
+    {
+      "source": "/nellies-sports-bar",
+      "destination": "/nellies-sports-bar.html"
+    },
+    {
+      "source": "/ocean-lounge-dc",
+      "destination": "/ocean-lounge-dc.html"
+    },
+    {
+      "source": "/salazar",
+      "destination": "/salazar.html"
+    },
+    {
+      "source": "/sax",
+      "destination": "/sax.html"
+    },
+    {
+      "source": "/techo-palma-formerly-el-techo",
+      "destination": "/techo-palma-formerly-el-techo.html"
+    },
+    {
+      "source": "/the-park-at-14th",
+      "destination": "/the-park-at-14th.html"
+    },
+    {
+      "source": "/twelve-after-twelve",
+      "destination": "/twelve-after-twelve.html"
+    },
+    {
+      "source": "/zeba-bar",
+      "destination": "/zeba-bar.html"
+    }
+  ]
+}
