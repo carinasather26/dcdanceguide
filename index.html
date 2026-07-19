@@ -3,26 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DC Dance Guide — Washington DC&#x27;s Dance Club Directory</title>
-  <link rel="icon" type="image/png" href="dc-dance-guide-logo.png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BGJJD3LR3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8BGJJD3LR3');
-</script>
-
-<meta name="description" content="Every dance club in DC — House, Techno, Hip-Hop, Latin, and more. Filter by neighborhood or vibe, see cover and dress code at a glance.">
+<title>DC Dance Clubs &amp; Nightlife Directory | DC Dance Guide — Washington DC</title>
+<meta name="description" content="The complete guide to DC clubs, dance bars, and nightlife in Washington DC. Find the best clubs in DC by neighborhood and music — cover, dress code, and crowd info included.">
 <link rel="canonical" href="https://dcdanceguide.com/index.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="DC Dance Guide — Washington DC&#x27;s Dance Club Directory">
-<meta property="og:description" content="Every dance club in DC — House, Techno, Hip-Hop, Latin, and more. Filter by neighborhood or vibe, see cover and dress code at a glance.">
+<meta property="og:title" content="DC Dance Clubs &amp; Nightlife Directory | DC Dance Guide — Washington DC">
+<meta property="og:description" content="The complete guide to DC clubs, dance bars, and nightlife in Washington DC. Find the best clubs in DC by neighborhood and music — cover, dress code, and crowd info included.">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#060010">
+<link rel="icon" type="image/png" href="/dc-dance-guide-logo.png">
+<link rel="apple-touch-icon" href="/dc-dance-guide-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BGJJD3LR3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8BGJJD3LR3');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -383,6 +376,55 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .r-card-hood{font-family:'DM Mono',monospace;font-size:0.67rem;color:rgba(232,224,245,0.5);text-transform:uppercase;letter-spacing:0.08em}
 
 /* ─ responsive ─ */
+/* ─ site hero (SEO H1 block) ─ */
+.site-hero{
+  padding:40px 28px 28px;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.site-hero-inner{max-width:720px}
+.site-h1{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  color:#fff;
+  margin-bottom:14px;
+}
+.site-lede{
+  font-family:'Inter',sans-serif;
+  font-size:0.97rem;
+  line-height:1.7;
+  color:rgba(232,224,245,0.62);
+  max-width:68ch;
+}
+.site-lede strong{color:rgba(232,224,245,0.88);font-weight:500}
+
+/* ─ SEO footer block ─ */
+.seo-block{
+  border-top:1px solid rgba(255,255,255,0.07);
+  padding:48px 28px 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  font-size:0.88rem;
+  line-height:1.72;
+  color:rgba(232,224,245,0.45);
+}
+.seo-block h2{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:1rem;
+  color:rgba(232,224,245,0.7);
+  margin-bottom:10px;
+}
+.seo-block a{color:#FF2CF2;text-decoration:none}
+.seo-block a:hover{text-decoration:underline}
+@media(max-width:700px){
+  .site-hero{padding:28px 18px 22px}
+  .seo-block{grid-template-columns:1fr;gap:24px;padding:36px 18px 0}
+}
+
 @media(max-width:700px){
   .hdr{padding:0 18px}
   .filters{padding:12px 18px}
@@ -401,6 +443,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <a href="/" class="hdr-logo">DC<em>DANCE</em>GUIDE</a>
   <a href="/contact" class="hdr-cta">List your venue →</a>
 </header>
+<section class="site-hero">
+  <div class="site-hero-inner">
+    <h1 class="site-h1">DC Dance Clubs &amp; Nightlife</h1>
+    <p class="site-lede">The complete guide to <strong>Washington DC dance clubs</strong>, bars, and late-night venues. Whether you're chasing house music in a warehouse, salsa dancing in Adams Morgan, or the best <strong>DC clubbing</strong> on a Friday night, every <strong>DC nightclub</strong> worth knowing is listed here — with real info on cover, dress code, and who shows up.</p>
+  </div>
+</section>
+
 <div class="filters">
   <div class="filter-row">
     <span class="filter-label">Area</span>
@@ -412,7 +461,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </div>
 
-<div class="count-bar">Dance clubs in <em>Washington DC</em> &nbsp;·&nbsp; <strong id="vc">25</strong> venues</div>
+<div class="count-bar"><strong id="vc">25</strong> <strong>DC clubs</strong> and dance venues in Washington DC &nbsp;&mdash;&nbsp; filter by neighborhood or music</div>
 
 <div class="venue-grid" id="grid">
 <a class="card" href="/9-30-club" data-hood="U Street Corridor" data-cats="HipHop-RnB|Indie-Alt|Retro" aria-label="View 9:30 Club">
@@ -668,6 +717,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 </div>
 <div class="empty" id="empty"><strong>No venues match.</strong>Clear a filter to see more.</div>
+
+<div class="seo-block">
+  <div>
+    <h2>About DC Dance Guide</h2>
+    <p>DC Dance Guide is Washington DC's dedicated directory for dance clubs, late-night bars, and nightlife venues. We cover every corner of the DC clubbing scene — from the underground <strong>techno and house clubs</strong> on U Street to the <strong>Latin dance bars</strong> in Adams Morgan, the <strong>hip-hop and R&amp;B spots</strong> near 14th Street, and the massive warehouse raves in Northeast DC.</p>
+    <p>Every listing includes the neighborhood, music format, crowd vibe, cover charge, and dress code — the real details that matter when you're deciding where to go. DC has one of the most diverse nightlife scenes on the East Coast, and this guide exists to make it navigable.</p>
+  </div>
+  <div>
+    <h2>Finding the best clubs in DC</h2>
+    <p>The <strong>best clubs in DC</strong> depend entirely on what you're looking for. For <strong>DC dance</strong> and electronic music, Flash and Echostage consistently rank among the top venues in the country. For Latin dancing, Bossa Bistro and Cafe Citron draw serious dancers every weekend. If you want live music alongside your dancing, the 9:30 Club and Madam's Organ are institutions.</p>
+    <p>Use the filters above to find <strong>DC nightclubs</strong> by neighborhood or music genre. New venues are added as the scene shifts — <a href="/contact">submit your club here</a> to get listed.</p>
+  </div>
+</div>
 <footer class="ftr">
   <div class="ftr-logo">DC<em>DANCE</em>GUIDE</div>
   <p class="ftr-note">Washington DC's curated dance club directory · dcdanceguide.com<br>
