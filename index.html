@@ -15,8 +15,8 @@
 <link rel="icon" type="image/png" href="/dc-dance-guide-logo.png">
 <link rel="apple-touch-icon" href="/dc-dance-guide-logo.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BGJJD3LR3"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8BGJJD3LR3');</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8BGJJD3LR3',{'transport_type':'beacon'});</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -29,6 +29,10 @@ body{
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
 }
+/* Ensure fallback system fonts match metrics so font-swap doesn't cause layout shift */
+@font-face { font-family:'Syne'; font-display:swap; }
+@font-face { font-family:'DM Mono'; font-display:swap; }
+@font-face { font-family:'Inter'; font-display:swap; }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -142,6 +146,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   display:block;
   transition:opacity 0.2s;
   text-decoration:none;
+  contain:layout style;
 }
 .card:focus-visible{outline:2px solid #00F5FF;outline-offset:-2px}
 .card:hover{opacity:0.95}
@@ -151,6 +156,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   display:block;
   transition:transform 0.5s ease, filter 0.3s ease;
   filter:brightness(0.7) saturate(0.85);
+  aspect-ratio:4/3;
 }
 .card:hover .card-img{transform:scale(1.04);filter:brightness(0.55) saturate(1.1)}
 .card-overlay{
@@ -489,7 +495,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <div class="venue-grid" id="grid">
 <a class="card" href="/9-30-club" data-hood="U Street Corridor" data-cats="HipHop-RnB|Indie-Alt|Retro" aria-label="View 9:30 Club">
-  <img class="card-img" src="https://washington.org/sites/default/files/glass_animals_at_930_club_lisa_walker_credit.jpg" alt="9:30 Club" loading="lazy">
+  <img class="card-img" src="https://washington.org/sites/default/files/glass_animals_at_930_club_lisa_walker_credit.jpg" alt="9:30 Club" loading="eager" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" fetchpriority="high">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
@@ -500,7 +506,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/black-cat-dc9" data-hood="Shaw" data-cats="HipHop-RnB|Indie-Alt|Retro" aria-label="View Black Cat / DC9">
-  <img class="card-img" src="https://www.blackcatdc.com/images/460/red-room-1.jpg" alt="Black Cat / DC9" loading="lazy">
+  <img class="card-img" src="https://www.blackcatdc.com/images/460/red-room-1.jpg" alt="Black Cat / DC9" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Shaw</span>
@@ -511,7 +517,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/bossa-bistro" data-hood="Adams Morgan" data-cats="Latin|Live-Music|Global-Beats" aria-label="View Bossa Bistro">
-  <img class="card-img" src="http://bossadc.com/wp-content/uploads/2014/01/Food-and-music.jpg" alt="Bossa Bistro" loading="lazy">
+  <img class="card-img" src="https://bossadc.com/wp-content/uploads/2014/01/Food-and-music.jpg" alt="Bossa Bistro" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
@@ -522,7 +528,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/cafe-citron" data-hood="Dupont Circle" data-cats="Latin|Global-Beats" aria-label="View Cafe Citron">
-  <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/57b210dbe3df28df0b8ea5d0/9eb54581-1215-401f-9183-282b2dabc313/processed_20250208_213204.jpg?format=2500w" alt="Cafe Citron" loading="lazy">
+  <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/57b210dbe3df28df0b8ea5d0/9eb54581-1215-401f-9183-282b2dabc313/processed_20250208_213204.jpg?format=800w" alt="Cafe Citron" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
@@ -533,7 +539,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/culture" data-hood="Northeast DC" data-cats="House-Techno|Indie-Alt|Global-Beats|EDM" aria-label="View Culture">
-  <img class="card-img" src="https://cdn.prod.website-files.com/63a4e30e8cfe919059ba8507/65b094232c768fb9eeb611c7_haydenjames-selects-09200.jpeg" alt="Culture" loading="lazy">
+  <img class="card-img" src="https://cdn.prod.website-files.com/63a4e30e8cfe919059ba8507/65b094232c768fb9eeb611c7_haydenjames-selects-09200.jpeg" alt="Culture" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Northeast DC</span>
@@ -544,7 +550,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/dans-cafe" data-hood="Adams Morgan" data-cats="Open-Format" aria-label="View Dan&#x27;s Cafe">
-  <img class="card-img" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkADUebvdl6E7ktznJHiXBDbKZ6vAY7WUTmUany9gs87VBwzfn6uxE3rqh1Lsr2456vSmaQOjtGi8xRM1mC2R4S1_SyME-ilPeZNtuTJe_sqUooLptRzLL7PiKA1-WwLAle5IEt=s1360-w1360-h1020-rw" alt="Dan&#x27;s Cafe" loading="lazy">
+  <img class="card-img" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkADUebvdl6E7ktznJHiXBDbKZ6vAY7WUTmUany9gs87VBwzfn6uxE3rqh1Lsr2456vSmaQOjtGi8xRM1mC2R4S1_SyME-ilPeZNtuTJe_sqUooLptRzLL7PiKA1-WwLAle5IEt=s1360-w1360-h1020-rw" alt="Dan&#x27;s Cafe" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
@@ -555,7 +561,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/decades" data-hood="Dupont Circle" data-cats="HipHop-RnB|Retro" aria-label="View Decades">
-  <img class="card-img" src="https://i0.wp.com/decadesdc.com/wp-content/uploads/2024/02/bg-decades.jpg" alt="Decades" loading="lazy">
+  <img class="card-img" src="https://i0.wp.com/decadesdc.com/wp-content/uploads/2024/02/bg-decades.jpg" alt="Decades" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
@@ -566,7 +572,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/district-alley-on-h" data-hood="H Street Corridor" data-cats="HipHop-RnB|Live-Music" aria-label="View District Alley on H">
-  <img class="card-img" src="https://static.wixstatic.com/media/74f742_14d1b7f5d0634ef28eba5fb3e8aa85ef~mv2.jpg/v1/fill/w_1136,h_736,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/74f742_14d1b7f5d0634ef28eba5fb3e8aa85ef~mv2.jpg" alt="District Alley on H" loading="lazy">
+  <img class="card-img" src="https://static.wixstatic.com/media/74f742_14d1b7f5d0634ef28eba5fb3e8aa85ef~mv2.jpg/v1/fill/w_800,h_736,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/74f742_14d1b7f5d0634ef28eba5fb3e8aa85ef~mv2.jpg" alt="District Alley on H" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
@@ -577,7 +583,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/echostage" data-hood="Northeast DC" data-cats="House-Techno|EDM" aria-label="View Echostage">
-  <img class="card-img" src="https://echostage.com/wp-content/uploads/2026/06/MartinGarrix2026_0607_010337-906068_@jordansabillo-scaled.jpg" alt="Echostage" loading="lazy">
+  <img class="card-img" src="https://echostage.com/wp-content/uploads/2026/06/MartinGarrix2026_0607_010337-906068_@jordansabillo-scaled.jpg" alt="Echostage" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Northeast DC</span>
@@ -588,7 +594,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/flash" data-hood="U Street Corridor" data-cats="House-Techno|LGBTQ" aria-label="View Flash">
-  <img class="card-img" src="https://epyck.s3.amazonaws.com/1a23bd340f314e0d480687fa19395c47_image.JPG" alt="Flash" loading="lazy">
+  <img class="card-img" src="https://epyck.s3.amazonaws.com/1a23bd340f314e0d480687fa19395c47_image.JPG" alt="Flash" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
@@ -599,7 +605,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/focus-social-club" data-hood="H Street Corridor" data-cats="HipHop-RnB" aria-label="View Focus Social Club">
-  <img class="card-img" src="https://lirp.cdn-website.com/140a0e2d/dms3rep/multi/opt/pexels-photo-16873275-1039h.png" alt="Focus Social Club" loading="lazy">
+  <img class="card-img" src="https://lirp.cdn-website.com/140a0e2d/dms3rep/multi/opt/pexels-photo-16873275-1039h.png" alt="Focus Social Club" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
@@ -610,7 +616,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/grand-central" data-hood="Adams Morgan" data-cats="HipHop-RnB" aria-label="View Grand Central">
-  <img class="card-img" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnTQ-ZcdCOjgJr956TN4CxcNnjcrRvxBeMd0WAUoVfOuT74kHi-L7JM_euydJ_hXhMKYCQ2Ak6efy0TCs2O_8gTuHLunqvzvjsnRiWlzzsmuw89Q1E44nFejoN5ykmwtOLAHKbzCw=s1360-w1360-h1020-rw" alt="Grand Central" loading="lazy">
+  <img class="card-img" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnTQ-ZcdCOjgJr956TN4CxcNnjcrRvxBeMd0WAUoVfOuT74kHi-L7JM_euydJ_hXhMKYCQ2Ak6efy0TCs2O_8gTuHLunqvzvjsnRiWlzzsmuw89Q1E44nFejoN5ykmwtOLAHKbzCw=s1360-w1360-h1020-rw" alt="Grand Central" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
@@ -621,7 +627,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/heaven-and-hell" data-hood="Adams Morgan" data-cats="HipHop-RnB|House-Techno|Indie-Alt" aria-label="View Heaven and Hell">
-  <img class="card-img" src="https://www.heavenandhellclub.com/imgs/pic.jpg" alt="Heaven and Hell" loading="lazy">
+  <img class="card-img" src="https://www.heavenandhellclub.com/imgs/pic.jpg" alt="Heaven and Hell" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
@@ -632,7 +638,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/jimmy-valentines-lonely-hearts-club" data-hood="Northeast DC" data-cats="House-Techno|Live-Music|Indie-Alt" aria-label="View Jimmy Valentine&#x27;s Lonely Hearts Club">
-  <img class="card-img" src="https://www.jimmyvalentineslhc.com/wp-content/uploads/2015/03/IMG_9818-1024x705.jpg" alt="Jimmy Valentine&#x27;s Lonely Hearts Club" loading="lazy">
+  <img class="card-img" src="https://www.jimmyvalentineslhc.com/wp-content/uploads/2015/03/IMG_9818-1024x705.jpg" alt="Jimmy Valentine&#x27;s Lonely Hearts Club" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Northeast DC</span>
@@ -643,7 +649,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/johnny-pistolas" data-hood="Adams Morgan" data-cats="HipHop-RnB|Latin|Global-Beats" aria-label="View Johnny Pistolas">
-  <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/63750f49a69f2035928cfc1b/cee08ed2-43b3-472d-97ec-2ba91234872e/Johnny_Pistolas_Washington_DC-ZEN_LENS%2823-of-39%29_600kb.jpg?format=2500w" alt="Johnny Pistolas" loading="lazy">
+  <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/63750f49a69f2035928cfc1b/cee08ed2-43b3-472d-97ec-2ba91234872e/Johnny_Pistolas_Washington_DC-ZEN_LENS%2823-of-39%29_600kb.jpg?format=800w" alt="Johnny Pistolas" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
@@ -654,7 +660,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/little-miss-whiskey-s-golden-dollar" data-hood="H Street Corridor" data-cats="HipHop-RnB|Indie-Alt|Retro" aria-label="View Little Miss Whiskey’s Golden Dollar">
-  <img class="card-img" src="https://i0.wp.com/www.littlemisswhiskeys.com/wp-content/uploads/2015/03/IMG_7544.jpg?zoom=2&amp;resize=1280%2C640" alt="Little Miss Whiskey’s Golden Dollar" loading="lazy">
+  <img class="card-img" src="https://i0.wp.com/www.littlemisswhiskeys.com/wp-content/uploads/2015/03/IMG_7544.jpg?zoom=2&amp;resize=1280%2C640" alt="Little Miss Whiskey’s Golden Dollar" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
@@ -665,7 +671,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/madams-organ" data-hood="Adams Morgan" data-cats="HipHop-RnB|Live-Music|Retro" aria-label="View Madam&#x27;s Organ">
-  <img class="card-img" src="https://madamsorgan.com/wp-content/uploads/cache/2022/01/bear-shot/1838819779.jpg" alt="Madam&#x27;s Organ" loading="lazy">
+  <img class="card-img" src="https://madamsorgan.com/wp-content/uploads/cache/2022/01/bear-shot/1838819779.jpg" alt="Madam&#x27;s Organ" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
@@ -676,7 +682,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/nellies-sports-bar" data-hood="U Street Corridor" data-cats="HipHop-RnB|LGBTQ" aria-label="View Nellie&#x27;s Sports Bar">
-  <img class="card-img" src="https://cdn.nelliessportsbar.com/2021/09/fvs5111-edit-copy-2-2048x1365-2-e1631585088486-1024x573.jpeg" alt="Nellie&#x27;s Sports Bar" loading="lazy">
+  <img class="card-img" src="https://cdn.nelliessportsbar.com/2021/09/fvs5111-edit-copy-2-2048x1365-2-e1631585088486-1024x573.jpeg" alt="Nellie&#x27;s Sports Bar" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
@@ -687,7 +693,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/ocean-lounge-dc" data-hood="H Street Corridor" data-cats="HipHop-RnB|Latin|Global-Beats" aria-label="View Ocean Lounge DC">
-  <img class="card-img" src="https://static.wixstatic.com/media/df3e20_a1f25ff5f6074366bd76fb15e07232ba~mv2.webp/v1/fill/w_1792,h_555,al_c,q_85,enc_avif,quality_auto/df3e20_a1f25ff5f6074366bd76fb15e07232ba~mv2.webp" alt="Ocean Lounge DC" loading="lazy">
+  <img class="card-img" src="https://static.wixstatic.com/media/df3e20_a1f25ff5f6074366bd76fb15e07232ba~mv2.webp/v1/fill/w_800,h_555,al_c,q_85,enc_avif,quality_auto/df3e20_a1f25ff5f6074366bd76fb15e07232ba~mv2.webp" alt="Ocean Lounge DC" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
@@ -698,7 +704,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/sax" data-hood="Downtown" data-cats="House-Techno|HipHop-RnB|Indie-Alt" aria-label="View SAX">
-  <img class="card-img" src="https://images.getbento.com/accounts/942562815b991eabb2ac3155c0002622/media/images/1955sax-012122-01745.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.5" alt="SAX" loading="lazy">
+  <img class="card-img" src="https://images.getbento.com/accounts/942562815b991eabb2ac3155c0002622/media/images/1955sax-012122-01745.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.5" alt="SAX" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Downtown</span>
@@ -709,7 +715,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/salazar" data-hood="U Street Corridor" data-cats="HipHop-RnB|Latin|Retro|Global-Beats" aria-label="View Salazar">
-  <img class="card-img" src="https://images.getbento.com/accounts/d5a076c42d8e032f1e81d08b613b06f9/media/images/98200_TES3113.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.58&amp;fp-y=0.43" alt="Salazar" loading="lazy">
+  <img class="card-img" src="https://images.getbento.com/accounts/d5a076c42d8e032f1e81d08b613b06f9/media/images/98200_TES3113.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.58&amp;fp-y=0.43" alt="Salazar" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
@@ -720,7 +726,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/techo-palma-formerly-el-techo" data-hood="Shaw" data-cats="House-Techno|Latin|Global-Beats" aria-label="View Techo Palma (Formerly El Techo)">
-  <img class="card-img" src="https://i0.wp.com/techopalma.com/wp-content/uploads/2026/05/TechoPalma2026_0508_010238-09106_%40TaniaHauyon.jpg?w=3000&amp;ssl=1" alt="Techo Palma (Formerly El Techo)" loading="lazy">
+  <img class="card-img" src="https://i0.wp.com/techopalma.com/wp-content/uploads/2026/05/TechoPalma2026_0508_010238-09106_%40TaniaHauyon.jpg?w=3000&amp;ssl=1" alt="Techo Palma (Formerly El Techo)" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Shaw</span>
@@ -731,7 +737,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/the-park-at-14th" data-hood="Downtown" data-cats="HipHop-RnB" aria-label="View The Park at 14th">
-  <img class="card-img" src="https://park14.com/wp-content/uploads/2023/07/Nightlife-is-Back.jpg" alt="The Park at 14th" loading="lazy">
+  <img class="card-img" src="https://park14.com/wp-content/uploads/2023/07/Nightlife-is-Back.jpg" alt="The Park at 14th" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Downtown</span>
@@ -742,7 +748,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/twelve-after-twelve" data-hood="Dupont Circle" data-cats="House-Techno|HipHop-RnB|Latin|Global-Beats" aria-label="View Twelve After Twelve">
-  <img class="card-img" src="https://static.wixstatic.com/media/373352_30a8417f1f9f409ca9353f7f9ec948c3~mv2.jpg/v1/fill/w_1279,h_1279,al_c,q_85,enc_auto/373352_30a8417f1f9f409ca9353f7f9ec948c3~mv2.jpg" alt="Twelve After Twelve" loading="lazy">
+  <img class="card-img" src="https://static.wixstatic.com/media/373352_30a8417f1f9f409ca9353f7f9ec948c3~mv2.jpg/v1/fill/w_800,h_1279,al_c,q_85,enc_auto/373352_30a8417f1f9f409ca9353f7f9ec948c3~mv2.jpg" alt="Twelve After Twelve" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
@@ -753,7 +759,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/zeba-bar" data-hood="Columbia Heights" data-cats="HipHop-RnB|Global-Beats" aria-label="View Zeba Bar">
-  <img class="card-img" src="https://washingtonian.com/wp-content/uploads/2016/05/l8-1.jpg" alt="Zeba Bar" loading="lazy">
+  <img class="card-img" src="https://washingtonian.com/wp-content/uploads/2016/05/l8-1.jpg" alt="Zeba Bar" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Columbia Heights</span>
