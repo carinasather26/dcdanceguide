@@ -257,7 +257,168 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 .ftr-cta:hover{border-color:#00F5FF}
 
-/* ─ detail page only ─ */
+/* ─ email signup strip (appears above footer on every page) ─ */
+.signup-strip{
+  border-top:1px solid rgba(255,255,255,0.07);
+  padding:56px 28px 52px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:0;
+  position:relative;
+  overflow:hidden;
+}
+.signup-strip::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 100% at 20% 50%, rgba(255,44,242,0.07), transparent 70%),
+    radial-gradient(ellipse 60% 100% at 80% 50%, rgba(0,245,255,0.06), transparent 70%);
+  pointer-events:none;
+}
+.signup-strip-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:0.72rem;
+  text-transform:uppercase;
+  letter-spacing:0.16em;
+  color:#FF2CF2;
+  text-shadow:0 0 10px rgba(255,44,242,0.5);
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.signup-strip-eyebrow::before,
+.signup-strip-eyebrow::after{
+  content:"";flex:0 0 28px;height:1px;
+  background:linear-gradient(to right,transparent,rgba(255,44,242,0.5));
+}
+.signup-strip-eyebrow::after{
+  background:linear-gradient(to left,transparent,rgba(255,44,242,0.5));
+}
+.signup-strip h2{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  color:#fff;
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  margin-bottom:12px;
+  max-width:18ch;
+}
+.signup-strip h2 em{
+  font-style:normal;
+  color:#FF2CF2;
+  text-shadow:0 0 18px rgba(255,44,242,0.5);
+}
+.signup-strip-sub{
+  font-family:'Inter',sans-serif;
+  font-size:0.97rem;
+  color:rgba(232,224,245,0.52);
+  max-width:44ch;
+  line-height:1.6;
+  margin-bottom:32px;
+}
+.signup-form{
+  display:flex;
+  gap:10px;
+  width:100%;
+  max-width:480px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.signup-input{
+  flex:1 1 240px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:999px;
+  padding:13px 22px;
+  font-family:'Inter',sans-serif;
+  font-size:0.92rem;
+  color:#fff;
+  outline:none;
+  transition:border-color 0.15s, box-shadow 0.15s;
+  min-width:0;
+}
+.signup-input::placeholder{color:rgba(232,224,245,0.3)}
+.signup-input:focus{
+  border-color:#FF2CF2;
+  box-shadow:0 0 0 3px rgba(255,44,242,0.15);
+}
+.signup-btn{
+  font-family:'DM Mono',monospace;
+  font-size:0.82rem;
+  font-weight:500;
+  padding:13px 26px;
+  border-radius:999px;
+  border:none;
+  background:#FF2CF2;
+  color:#1a0020;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,44,242,0.45);
+  transition:box-shadow 0.15s, transform 0.1s;
+  white-space:nowrap;
+}
+.signup-btn:hover{box-shadow:0 0 32px rgba(255,44,242,0.7);transform:translateY(-1px)}
+.signup-btn:active{transform:translateY(0)}
+.signup-status{
+  margin-top:16px;
+  font-family:'DM Mono',monospace;
+  font-size:0.8rem;
+  min-height:20px;
+  transition:opacity 0.2s;
+}
+.signup-status.ok{color:#00F5FF}
+.signup-status.err{color:#FF6B6B}
+.signup-perks{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:28px;
+  justify-content:center;
+}
+.signup-perk{
+  font-family:'DM Mono',monospace;
+  font-size:0.7rem;
+  color:rgba(232,224,245,0.4);
+  display:flex;align-items:center;gap:6px;
+}
+.signup-perk::before{content:"✓";color:#FF2CF2;font-size:0.75rem}
+
+/* ─ subscribe page ─ */
+.sub-wrap{max-width:600px;margin:0 auto;padding:60px 28px 100px}
+.sub-back{
+  font-family:'DM Mono',monospace;font-size:0.75rem;
+  color:rgba(232,224,245,0.4);
+  display:inline-flex;align-items:center;gap:8px;
+  margin-bottom:44px;transition:color 0.14s;
+}
+.sub-back:hover{color:#00F5FF}
+.sub-past{
+  margin-top:56px;
+  padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
+.sub-past h2{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.1rem;color:#fff;margin-bottom:18px;
+}
+.sub-issue{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  font-size:0.88rem;
+}
+.sub-issue-num{
+  font-family:'DM Mono',monospace;font-size:0.7rem;
+  color:#FF2CF2;white-space:nowrap;padding-top:2px;
+}
+.sub-issue-title{color:#fff;margin-bottom:3px;font-weight:500}
+.sub-issue-desc{color:rgba(232,224,245,0.45);font-size:0.84rem;line-height:1.5}
+
+@media(max-width:700px){
+  .signup-strip{padding:44px 18px 40px}
+  .sub-wrap{padding:40px 18px 80px}
+}
 .pg-wrap{max-width:1100px;margin:0 auto;padding:0 28px}
 .pg-back{
   font-family:'DM Mono',monospace;font-size:0.75rem;
@@ -471,7 +632,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </head>
 <body><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NightClub", "name": "Johnny Pistolas", "url": "https://dcdanceguide.com/johnny-pistolas.html", "image": "https://images.squarespace-cdn.com/content/v1/63750f49a69f2035928cfc1b/cee08ed2-43b3-472d-97ec-2ba91234872e/Johnny_Pistolas_Washington_DC-ZEN_LENS%2823-of-39%29_600kb.jpg?format=2500w", "description": "Johnny Pistolas in Adams Morgan, DC. spacious taco spot by day that transforms into a high-volume multi-level Latin and Top 40 dance club on Fri/Sat.", "address": {"@type": "PostalAddress", "addressLocality": "Washington", "addressRegion": "DC", "addressCountry": "US"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Directory", "item": "https://dcdanceguide.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Johnny Pistolas", "item": "https://dcdanceguide.com/johnny-pistolas.html"}]}</script><header class="hdr">
   <a href="/" class="hdr-logo">DC<em>DANCE</em>GUIDE</a>
-  <a href="/contact" class="hdr-cta">List your venue →</a>
+  <nav style="display:flex;align-items:center;gap:16px">
+    <a href="/subscribe" style="font-family:'DM Mono',monospace;font-size:0.75rem;color:rgba(232,224,245,0.55);transition:color 0.14s" onmouseover="this.style.color='#FF2CF2'" onmouseout="this.style.color='rgba(232,224,245,0.55)'">Newsletter</a>
+    <a href="/contact" class="hdr-cta">List your venue →</a>
+  </nav>
 </header>
 <div class="pg-wrap">
   <a class="pg-back" href="/">← Back to directory</a>
@@ -574,11 +738,95 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     </div>
   </section>
 </div>
-<footer class="ftr">
+<section class="signup-strip">
+  <div class="signup-strip-eyebrow">DC Nightlife Newsletter</div>
+  <h2>Your weekend <em>starts here.</em></h2>
+  <p class="signup-strip-sub">Club recommendations, themed night alerts, new venue drops, and DC dance scene news — straight to your inbox. No spam, ever.</p>
+  <form class="signup-form" id="signup-strip-club">
+    <input class="signup-input" type="email" name="EMAIL" placeholder="your@email.com" required aria-label="Email address">
+    <!-- Mailchimp honeypot -->
+    <div style="position:absolute;left:-5000px" aria-hidden="true">
+      <input type="text" name="b_b18bcb0c472ccb95ae79c9c6f_f804d87d6e" tabindex="-1" value="">
+    </div>
+    <button class="signup-btn" type="submit">Subscribe →</button>
+  </form>
+  <div class="signup-status" id="signup-strip-club-status" aria-live="polite"></div>
+  <div class="signup-perks">
+    <span class="signup-perk">Club picks every week</span>
+    <span class="signup-perk">Themed night alerts</span>
+    <span class="signup-perk">New venues first</span>
+    <span class="signup-perk">Free forever</span>
+  </div>
+</section><footer class="ftr">
   <div class="ftr-logo">DC<em>DANCE</em>GUIDE</div>
   <p class="ftr-note">Washington DC's curated dance club directory · dcdanceguide.com<br>
   Not affiliated with any venue. Always call ahead — covers and hours change.</p>
-  <a href="/contact" class="ftr-cta">List your venue →</a>
-</footer>
+  <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+    <a href="/subscribe" class="ftr-cta" style="color:#FF2CF2;border-bottom-color:rgba(255,44,242,0.35)">Newsletter →</a>
+    <a href="/contact" class="ftr-cta">List your venue →</a>
+  </div>
+</footer><script>
+(function(){
+  // ── Mailchimp AJAX signup ─────────────────────────────────────────────────
+  // Replace MAILCHIMP_ACTION_URL with your Mailchimp form action URL
+  // Get it from: Mailchimp → Audience → Signup forms → Embedded forms → copy action=""
+  var MC_URL = 'https://dcdanceguide.us20.list-manage.com/subscribe/post?u=b18bcb0c472ccb95ae79c9c6f&id=f804d87d6e&f_id=003ac7e3f0';
+
+  function handleSignup(formId) {
+    var form   = document.getElementById(formId);
+    var status = document.getElementById(formId + '-status');
+    if (!form || !status) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = form.querySelector('[name="EMAIL"]').value.trim();
+      if (!email) return;
+
+      var btn = form.querySelector('.signup-btn');
+      btn.disabled = true;
+      btn.textContent = 'Subscribing…';
+      status.textContent = '';
+      status.className = 'signup-status';
+
+      // Mailchimp requires JSONP for cross-origin embedded forms
+      // Swap /post? to /post-json? and append &c=callback
+      var url = MC_URL.replace('/post?', '/post-json?') + '&c=mcCallback&EMAIL=' + encodeURIComponent(email);
+
+      window.mcCallback = function(data) {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe →';
+        if (data.result === 'success') {
+          form.style.display = 'none';
+          status.textContent = '🎉 You\'re in! Check your inbox for a confirmation.';
+          status.className = 'signup-status ok';
+        } else {
+          var msg = data.msg || 'Something went wrong — please try again.';
+          // Strip Mailchimp's HTML error tags
+          msg = msg.replace(/<[^>]+>/g, '');
+          if (msg.indexOf('already subscribed') > -1) msg = 'You\'re already on the list!';
+          status.textContent = msg;
+          status.className = 'signup-status err';
+        }
+        delete window.mcCallback;
+        if (script && script.parentNode) script.parentNode.removeChild(script);
+      };
+
+      var script = document.createElement('script');
+      script.src = url;
+      script.onerror = function() {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe →';
+        status.textContent = 'Connection error — please try again.';
+        status.className = 'signup-status err';
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  // Wire up all signup forms on the page
+  ['signup-strip-main','signup-strip-club'].forEach(handleSignup);
+  handleSignup('subscribe-form-main');
+})();
+</script>
 </body>
 </html>

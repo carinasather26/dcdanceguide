@@ -91,6 +91,10 @@
       "destination": "/sax.html"
     },
     {
+      "source": "/subscribe",
+      "destination": "/subscribe.html"
+    },
+    {
       "source": "/techo-palma-formerly-el-techo",
       "destination": "/techo-palma-formerly-el-techo.html"
     },
