@@ -306,7 +306,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   font-family:'Syne',sans-serif;
   font-weight:800;
   font-size:1.15rem;
-  color:#fff;
+  color:var(--club-glow,#FF2CF2);
+  text-shadow:0 0 14px color-mix(in srgb,var(--club-glow,#FF2CF2) 45%,transparent);
   margin-bottom:14px;
   display:flex;align-items:center;gap:12px;
 }
@@ -314,11 +315,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   content:"";
   width:4px;height:20px;
   border-radius:2px;
-  background:#FF3B3B;
-  box-shadow:0 0 10px rgba(255,59,59,0.6);
+  background:var(--club-glow,#FF2CF2);
+  box-shadow:0 0 10px color-mix(in srgb,var(--club-glow,#FF2CF2) 70%,transparent);
   flex-shrink:0;
 }
-.pg-section h2::after{content:"";flex:1;height:1px;background:rgba(255,255,255,0.08)}
+.pg-section h2::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--club-glow,#FF2CF2) 18%,transparent)}
 .pg-section p{font-size:1.05rem;color:#fff;line-height:1.7;font-weight:400}
 
 .pg-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
@@ -492,7 +493,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
-    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">9:30 Club</div>
+    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">9:30 Club</div>
     <div class="card-tags"><span class="ctag">Pop</span><span class="ctag">Indie</span><span class="ctag">Throwbacks</span></div>
     <div class="card-hours">Show-based — doors typically 7–9pm nightly</div>
   </div>
@@ -503,7 +504,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Shaw</span>
-    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Black Cat / DC9</div>
+    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Black Cat / DC9</div>
     <div class="card-tags"><span class="ctag">Indie rock</span><span class="ctag">Alternative</span><span class="ctag">Synth-pop</span></div>
     <div class="card-hours">Mon–Thu &amp; Sun 8pm–2am</div>
   </div>
@@ -514,7 +515,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
-    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Bossa Bistro</div>
+    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Bossa Bistro</div>
     <div class="card-tags"><span class="ctag">Live Salsa</span><span class="ctag">Samba</span><span class="ctag">Jazz</span></div>
     <div class="card-hours">Wed–Thu 5:30pm–2am</div>
   </div>
@@ -525,7 +526,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
-    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Cafe Citron</div>
+    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Cafe Citron</div>
     <div class="card-tags"><span class="ctag">Salsa</span><span class="ctag">Bachata</span><span class="ctag">Merengue</span></div>
     <div class="card-hours">Wed 8pm–2am</div>
   </div>
@@ -536,7 +537,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Northeast DC</span>
-    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Culture</div>
+    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Culture</div>
     <div class="card-tags"><span class="ctag">House</span><span class="ctag">Techno</span><span class="ctag">Afrobeat</span></div>
     <div class="card-hours">Event-based — check Instagram for schedule</div>
   </div>
@@ -547,7 +548,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
-    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Dan&#x27;s Cafe</div>
+    <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">Dan&#x27;s Cafe</div>
     <div class="card-tags"><span class="ctag">Eclectic</span><span class="ctag">whatever&#x27;s on</span></div>
     <div class="card-hours">Fri &amp; Sat 7pm–3am</div>
   </div>
@@ -558,7 +559,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
-    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Decades</div>
+    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Decades</div>
     <div class="card-tags"><span class="ctag">Retro pop</span><span class="ctag">Hip-Hop</span><span class="ctag">Top 40</span></div>
     <div class="card-hours">Thu 10pm–2am</div>
   </div>
@@ -569,7 +570,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
-    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">District Alley on H</div>
+    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">District Alley on H</div>
     <div class="card-tags"><span class="ctag">Live music</span><span class="ctag">R&amp;B</span><span class="ctag">Soul</span></div>
     <div class="card-hours">Thu 7pm–12am</div>
   </div>
@@ -580,7 +581,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Northeast DC</span>
-    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Echostage</div>
+    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Echostage</div>
     <div class="card-tags"><span class="ctag">Heavy EDM</span><span class="ctag">Dubstep</span><span class="ctag">Trance</span></div>
     <div class="card-hours">Fri &amp; Sat 10pm–2am (event-based — check calendar)</div>
   </div>
@@ -591,7 +592,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
-    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Flash</div>
+    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Flash</div>
     <div class="card-tags"><span class="ctag">House</span><span class="ctag">Techno</span><span class="ctag">Drum &amp; Bass</span></div>
     <div class="card-hours">Thu 10pm–3am</div>
   </div>
@@ -602,7 +603,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
-    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Focus Social Club</div>
+    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Focus Social Club</div>
     <div class="card-tags"><span class="ctag">Open format</span><span class="ctag">R&amp;B</span><span class="ctag">Hip-Hop</span></div>
     <div class="card-hours">Thu 5pm–2am</div>
   </div>
@@ -613,7 +614,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
-    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Grand Central</div>
+    <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">Grand Central</div>
     <div class="card-tags"><span class="ctag">Top 40</span><span class="ctag">Sing-alongs</span><span class="ctag">Hip-Hop</span></div>
     <div class="card-hours">Wed 5pm–11pm</div>
   </div>
@@ -657,7 +658,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
-    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Little Miss Whiskey’s Golden Dollar</div>
+    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Little Miss Whiskey’s Golden Dollar</div>
     <div class="card-tags"><span class="ctag">&#x27;80s New Wave</span><span class="ctag">&#x27;90s Hip-Hop</span><span class="ctag">Synth-pop</span></div>
     <div class="card-hours">Mon–Thu &amp; Sun 5pm–2am</div>
   </div>
@@ -668,7 +669,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
-    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Madam&#x27;s Organ</div>
+    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Madam&#x27;s Organ</div>
     <div class="card-tags"><span class="ctag">Live Blues</span><span class="ctag">Soul</span><span class="ctag">R&amp;B</span></div>
     <div class="card-hours">Mon–Thu &amp; Sun 5pm–2am</div>
   </div>
@@ -690,7 +691,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
-    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Ocean Lounge DC</div>
+    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Ocean Lounge DC</div>
     <div class="card-tags"><span class="ctag">Hip-Hop</span><span class="ctag">R&amp;B</span><span class="ctag">Top 40</span></div>
     <div class="card-hours">Tue 6pm–12am</div>
   </div>
@@ -701,7 +702,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Downtown</span>
-    <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">SAX</div>
+    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">SAX</div>
     <div class="card-tags"><span class="ctag">Top 40 remixes</span><span class="ctag">commercial house</span></div>
     <div class="card-hours">Wed &amp; Fri 11pm–3am</div>
   </div>
@@ -712,7 +713,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
-    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Salazar</div>
+    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Salazar</div>
     <div class="card-tags"><span class="ctag">Top 40 remixes</span><span class="ctag">Reggaeton</span><span class="ctag">Throwbacks</span></div>
     <div class="card-hours">Tue–Wed 4pm–12am</div>
   </div>
@@ -723,7 +724,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Shaw</span>
-    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Techo Palma (Formerly El Techo)</div>
+    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Techo Palma (Formerly El Techo)</div>
     <div class="card-tags"><span class="ctag">Latin House</span><span class="ctag">Afro-House</span><span class="ctag">Tropical Beats</span></div>
     <div class="card-hours">Tue &amp; Thu 5pm–12am</div>
   </div>
@@ -745,7 +746,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
-    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Twelve After Twelve</div>
+    <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">Twelve After Twelve</div>
     <div class="card-tags"><span class="ctag">House</span><span class="ctag">Deep House</span><span class="ctag">Reggaeton</span></div>
     <div class="card-hours">Fri &amp; Sat 10pm–3am</div>
   </div>
@@ -756,7 +757,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Columbia Heights</span>
-    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Zeba Bar</div>
+    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Zeba Bar</div>
     <div class="card-tags"><span class="ctag">Afrobeats</span><span class="ctag">Reggae</span><span class="ctag">Dancehall</span></div>
     <div class="card-hours">Mon–Thu &amp; Sun 5pm–2am</div>
   </div>

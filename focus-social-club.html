@@ -306,7 +306,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   font-family:'Syne',sans-serif;
   font-weight:800;
   font-size:1.15rem;
-  color:#fff;
+  color:var(--club-glow,#FF2CF2);
+  text-shadow:0 0 14px color-mix(in srgb,var(--club-glow,#FF2CF2) 45%,transparent);
   margin-bottom:14px;
   display:flex;align-items:center;gap:12px;
 }
@@ -314,11 +315,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   content:"";
   width:4px;height:20px;
   border-radius:2px;
-  background:#FF3B3B;
-  box-shadow:0 0 10px rgba(255,59,59,0.6);
+  background:var(--club-glow,#FF2CF2);
+  box-shadow:0 0 10px color-mix(in srgb,var(--club-glow,#FF2CF2) 70%,transparent);
   flex-shrink:0;
 }
-.pg-section h2::after{content:"";flex:1;height:1px;background:rgba(255,255,255,0.08)}
+.pg-section h2::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--club-glow,#FF2CF2) 18%,transparent)}
 .pg-section p{font-size:1.05rem;color:#fff;line-height:1.7;font-weight:400}
 
 .pg-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
@@ -469,19 +470,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <div class="pg-wrap">
   <a class="pg-back" href="/">← Back to directory</a>
 
-  <div class="pg-hero" style="--glow:#FFEE00">
+  <div class="pg-hero" style="--glow:#FF5C35">
     <img src="https://lirp.cdn-website.com/140a0e2d/dms3rep/multi/opt/pexels-photo-16873275-1039h.png" alt="Focus Social Club">
     <div class="pg-hero-cap">
       <div class="hood">H Street Corridor</div>
-      <h1 style="color:#FFEE00;text-shadow:0 0 24px #FFEE0055">Focus Social Club</h1>
+      <h1 style="color:#FF5C35;text-shadow:0 0 24px #FF5C3555">Focus Social Club</h1>
     </div>
   </div>
 
-  <div class="pg-body">
+  <div class="pg-body" style="--club-glow:#FF5C35">
     <div>
       <div class="pg-section">
         <h2>Music at Focus Social Club</h2>
-        <div class="pg-pills"><span class="pg-pill" style="border-color:#FFEE0044;color:#FFEE00;background:#FFEE000f">Open format</span><span class="pg-pill" style="border-color:#FFEE0044;color:#FFEE00;background:#FFEE000f">R&amp;B</span><span class="pg-pill" style="border-color:#FFEE0044;color:#FFEE00;background:#FFEE000f">Hip-Hop</span></div>
+        <div class="pg-pills"><span class="pg-pill" style="border-color:#FF5C3544;color:#FF5C35;background:#FF5C350f">Open format</span><span class="pg-pill" style="border-color:#FF5C3544;color:#FF5C35;background:#FF5C350f">R&amp;B</span><span class="pg-pill" style="border-color:#FF5C3544;color:#FF5C35;background:#FF5C350f">Hip-Hop</span></div>
         <p>sleek multi-level lounge transitioning from popular brunch spot to packed club at night.</p>
       </div>
 

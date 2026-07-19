@@ -306,7 +306,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   font-family:'Syne',sans-serif;
   font-weight:800;
   font-size:1.15rem;
-  color:#fff;
+  color:var(--club-glow,#FF2CF2);
+  text-shadow:0 0 14px color-mix(in srgb,var(--club-glow,#FF2CF2) 45%,transparent);
   margin-bottom:14px;
   display:flex;align-items:center;gap:12px;
 }
@@ -314,11 +315,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   content:"";
   width:4px;height:20px;
   border-radius:2px;
-  background:#FF3B3B;
-  box-shadow:0 0 10px rgba(255,59,59,0.6);
+  background:var(--club-glow,#FF2CF2);
+  box-shadow:0 0 10px color-mix(in srgb,var(--club-glow,#FF2CF2) 70%,transparent);
   flex-shrink:0;
 }
-.pg-section h2::after{content:"";flex:1;height:1px;background:rgba(255,255,255,0.08)}
+.pg-section h2::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--club-glow,#FF2CF2) 18%,transparent)}
 .pg-section p{font-size:1.05rem;color:#fff;line-height:1.7;font-weight:400}
 
 .pg-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
@@ -469,19 +470,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <div class="pg-wrap">
   <a class="pg-back" href="/">← Back to directory</a>
 
-  <div class="pg-hero" style="--glow:#39FF14">
+  <div class="pg-hero" style="--glow:#00F5FF">
     <img src="https://images.getbento.com/accounts/942562815b991eabb2ac3155c0002622/media/images/1955sax-012122-01745.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.5" alt="SAX">
     <div class="pg-hero-cap">
       <div class="hood">Downtown</div>
-      <h1 style="color:#39FF14;text-shadow:0 0 24px #39FF1455">SAX</h1>
+      <h1 style="color:#00F5FF;text-shadow:0 0 24px #00F5FF55">SAX</h1>
     </div>
   </div>
 
-  <div class="pg-body">
+  <div class="pg-body" style="--club-glow:#00F5FF">
     <div>
       <div class="pg-section">
         <h2>Music at SAX</h2>
-        <div class="pg-pills"><span class="pg-pill" style="border-color:#39FF1444;color:#39FF14;background:#39FF140f">Top 40 remixes</span><span class="pg-pill" style="border-color:#39FF1444;color:#39FF14;background:#39FF140f">commercial house</span></div>
+        <div class="pg-pills"><span class="pg-pill" style="border-color:#00F5FF44;color:#00F5FF;background:#00F5FF0f">Top 40 remixes</span><span class="pg-pill" style="border-color:#00F5FF44;color:#00F5FF;background:#00F5FF0f">commercial house</span></div>
         <p>cabaret dinner theater that morphs into a late-night bottle-service lounge.</p>
       </div>
 
