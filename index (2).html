@@ -15,8 +15,8 @@
 <link rel="icon" type="image/png" href="/dc-dance-guide-logo.png">
 <link rel="apple-touch-icon" href="/dc-dance-guide-logo.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BGJJD3LR3"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8BGJJD3LR3');</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8BGJJD3LR3',{'transport_type':'beacon'});</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -29,6 +29,10 @@ body{
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
 }
+/* Ensure fallback system fonts match metrics so font-swap doesn't cause layout shift */
+@font-face { font-family:'Syne'; font-display:swap; }
+@font-face { font-family:'DM Mono'; font-display:swap; }
+@font-face { font-family:'Inter'; font-display:swap; }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -38,87 +42,123 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   position:sticky;top:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 28px;
-  height:60px;
-  background:rgba(6,0,16,0.88);
+  height:66px;
+  background:rgba(6,0,16,0.92);
   backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,0.07);
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 .hdr-logo{
   font-family:'Syne',sans-serif;
   font-weight:800;
-  font-size:1.15rem;
+  font-size:1.2rem;
   letter-spacing:-0.01em;
   color:#fff;
   text-transform:uppercase;
   display:flex;align-items:center;gap:2px;
+  flex-shrink:0;
 }
 .hdr-logo em{
   font-style:normal;
   color:#FF2CF2;
   text-shadow:0 0 12px rgba(255,44,242,0.7);
 }
-.hdr-cta{
-  font-family:'DM Mono',monospace;
-  font-size:0.75rem;
-  color:rgba(232,224,245,0.55);
-  border:1px solid rgba(255,255,255,0.12);
-  padding:6px 14px;
-  border-radius:999px;
-  transition:all 0.15s;
+.hdr-nav{
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
-.hdr-cta:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
+.hdr-nav-link{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:0.88rem;
+  color:#4D9FFF;
+  text-shadow:0 0 10px rgba(77,159,255,0.45);
+  padding:7px 14px;
+  border-radius:8px;
+  border:1px solid rgba(77,159,255,0.2);
+  background:rgba(77,159,255,0.06);
+  transition:all 0.15s;
+  white-space:nowrap;
+}
+.hdr-nav-link:hover{
+  color:#fff;
+  background:rgba(77,159,255,0.15);
+  border-color:rgba(77,159,255,0.5);
+  text-shadow:0 0 14px rgba(77,159,255,0.7);
+}
+.hdr-cta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:0.88rem;
+  color:#fff;
+  background:#4D9FFF;
+  border:1px solid #4D9FFF;
+  padding:7px 16px;
+  border-radius:8px;
+  transition:all 0.15s;
+  white-space:nowrap;
+  box-shadow:0 0 16px rgba(77,159,255,0.35);
+}
+.hdr-cta:hover{
+  background:#6BAFFF;
+  border-color:#6BAFFF;
+  box-shadow:0 0 24px rgba(77,159,255,0.6);
+}
 
 /* ─ filter bar ─ */
 .filters{
-  position:sticky;top:60px;z-index:90;
+  position:sticky;top:66px;z-index:90;
   background:rgba(6,0,16,0.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(255,255,255,0.07);
-  padding:14px 28px;
-  display:flex;flex-direction:column;gap:10px;
+  padding:16px 28px;
+  display:flex;flex-direction:column;gap:12px;
 }
-.filter-row{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .filter-label{
   font-family:'DM Mono',monospace;
-  font-size:0.68rem;
+  font-size:0.75rem;
+  font-weight:500;
   text-transform:uppercase;
-  letter-spacing:0.1em;
-  color:rgba(232,224,245,0.35);
+  letter-spacing:0.12em;
+  color:#FF3B3B;
+  text-shadow:0 0 8px rgba(255,59,59,0.5);
   margin-right:6px;
   white-space:nowrap;
 }
 .pill{
-  font-family:'DM Mono',monospace;
-  font-size:0.72rem;
-  padding:5px 13px;
+  font-family:'Inter',sans-serif;
+  font-size:0.85rem;
+  font-weight:500;
+  padding:7px 16px;
   border-radius:999px;
-  border:1px solid rgba(255,255,255,0.13);
-  color:rgba(232,224,245,0.55);
-  background:transparent;
+  border:1px solid rgba(255,255,255,0.2);
+  color:rgba(232,224,245,0.75);
+  background:rgba(255,255,255,0.04);
   transition:all 0.14s;
   cursor:pointer;
   white-space:nowrap;
 }
-.pill:hover{border-color:rgba(255,255,255,0.4);color:#fff}
+.pill:hover{border-color:rgba(255,255,255,0.55);color:#fff;background:rgba(255,255,255,0.08)}
 .pill.on{
-  background:#FF2CF2;border-color:#FF2CF2;
-  color:#1a0020;font-weight:500;
-  box-shadow:0 0 14px rgba(255,44,242,0.5);
+  background:#FF3B3B;border-color:#FF3B3B;
+  color:#fff;font-weight:600;
+  box-shadow:0 0 16px rgba(255,59,59,0.55);
 }
 .pill.on.music-pill{
-  background:#00F5FF;border-color:#00F5FF;
-  color:#001f24;
-  box-shadow:0 0 14px rgba(0,245,255,0.45);
+  background:#FF3B3B;border-color:#FF3B3B;
+  color:#fff;
+  box-shadow:0 0 16px rgba(255,59,59,0.55);
 }
 
 /* ─ venue count ─ */
 .count-bar{
-  padding:18px 28px 10px;
-  font-family:'DM Mono',monospace;
-  font-size:0.8rem;
-  color:rgba(232,224,245,0.4);
+  padding:16px 28px 10px;
+  font-family:'Inter',sans-serif;
+  font-size:0.9rem;
+  color:rgba(232,224,245,0.55);
 }
-.count-bar strong{color:#FF2CF2;font-size:0.9rem;}
+.count-bar strong{color:#FF3B3B;font-size:1rem;font-weight:600;text-shadow:0 0 8px rgba(255,59,59,0.4);}
 
 /* ─ grid ─ */
 .venue-grid{
@@ -139,6 +179,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   display:block;
   transition:opacity 0.2s;
   text-decoration:none;
+  contain:layout style;
 }
 .card:focus-visible{outline:2px solid #00F5FF;outline-offset:-2px}
 .card:hover{opacity:0.95}
@@ -148,6 +189,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   display:block;
   transition:transform 0.5s ease, filter 0.3s ease;
   filter:brightness(0.7) saturate(0.85);
+  aspect-ratio:4/3;
 }
 .card:hover .card-img{transform:scale(1.04);filter:brightness(0.55) saturate(1.1)}
 .card-overlay{
@@ -162,10 +204,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 .card-hood{
   font-family:'DM Mono',monospace;
-  font-size:0.68rem;
+  font-size:0.78rem;
+  font-weight:500;
   text-transform:uppercase;
-  letter-spacing:0.12em;
-  color:rgba(232,224,245,0.55);
+  letter-spacing:0.1em;
+  color:#fff;
 }
 .card-name{
   font-family:'Syne',sans-serif;
@@ -176,15 +219,24 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   color:#fff;
   text-shadow:0 2px 20px rgba(0,0,0,0.8);
 }
-.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
-.ctag{
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.card-hours{
   font-family:'DM Mono',monospace;
-  font-size:0.65rem;
-  padding:3px 9px;
+  font-size:0.72rem;
+  font-weight:500;
+  color:rgba(232,224,245,0.75);
+  margin-top:6px;
+  letter-spacing:0.02em;
+}
+.ctag{
+  font-family:'Inter',sans-serif;
+  font-size:0.72rem;
+  font-weight:500;
+  padding:4px 10px;
   border-radius:999px;
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.18);
-  color:rgba(232,224,245,0.8);
+  background:rgba(255,59,59,0.12);
+  border:1px solid rgba(255,59,59,0.5);
+  color:#FF6B6B;
   backdrop-filter:blur(4px);
 }
 .card-arrow{
@@ -238,7 +290,168 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 .ftr-cta:hover{border-color:#00F5FF}
 
-/* ─ detail page only ─ */
+/* ─ email signup strip (appears above footer on every page) ─ */
+.signup-strip{
+  border-top:1px solid rgba(255,255,255,0.07);
+  padding:56px 28px 52px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:0;
+  position:relative;
+  overflow:hidden;
+}
+.signup-strip::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 100% at 20% 50%, rgba(255,44,242,0.07), transparent 70%),
+    radial-gradient(ellipse 60% 100% at 80% 50%, rgba(0,245,255,0.06), transparent 70%);
+  pointer-events:none;
+}
+.signup-strip-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:0.72rem;
+  text-transform:uppercase;
+  letter-spacing:0.16em;
+  color:#FF2CF2;
+  text-shadow:0 0 10px rgba(255,44,242,0.5);
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.signup-strip-eyebrow::before,
+.signup-strip-eyebrow::after{
+  content:"";flex:0 0 28px;height:1px;
+  background:linear-gradient(to right,transparent,rgba(255,44,242,0.5));
+}
+.signup-strip-eyebrow::after{
+  background:linear-gradient(to left,transparent,rgba(255,44,242,0.5));
+}
+.signup-strip h2{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  color:#fff;
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  margin-bottom:12px;
+  max-width:18ch;
+}
+.signup-strip h2 em{
+  font-style:normal;
+  color:#FF2CF2;
+  text-shadow:0 0 18px rgba(255,44,242,0.5);
+}
+.signup-strip-sub{
+  font-family:'Inter',sans-serif;
+  font-size:0.97rem;
+  color:rgba(232,224,245,0.52);
+  max-width:44ch;
+  line-height:1.6;
+  margin-bottom:32px;
+}
+.signup-form{
+  display:flex;
+  gap:10px;
+  width:100%;
+  max-width:480px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.signup-input{
+  flex:1 1 240px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:999px;
+  padding:13px 22px;
+  font-family:'Inter',sans-serif;
+  font-size:0.92rem;
+  color:#fff;
+  outline:none;
+  transition:border-color 0.15s, box-shadow 0.15s;
+  min-width:0;
+}
+.signup-input::placeholder{color:rgba(232,224,245,0.3)}
+.signup-input:focus{
+  border-color:#FF2CF2;
+  box-shadow:0 0 0 3px rgba(255,44,242,0.15);
+}
+.signup-btn{
+  font-family:'DM Mono',monospace;
+  font-size:0.82rem;
+  font-weight:500;
+  padding:13px 26px;
+  border-radius:999px;
+  border:none;
+  background:#FF2CF2;
+  color:#1a0020;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,44,242,0.45);
+  transition:box-shadow 0.15s, transform 0.1s;
+  white-space:nowrap;
+}
+.signup-btn:hover{box-shadow:0 0 32px rgba(255,44,242,0.7);transform:translateY(-1px)}
+.signup-btn:active{transform:translateY(0)}
+.signup-status{
+  margin-top:16px;
+  font-family:'DM Mono',monospace;
+  font-size:0.8rem;
+  min-height:20px;
+  transition:opacity 0.2s;
+}
+.signup-status.ok{color:#00F5FF}
+.signup-status.err{color:#FF6B6B}
+.signup-perks{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:28px;
+  justify-content:center;
+}
+.signup-perk{
+  font-family:'DM Mono',monospace;
+  font-size:0.7rem;
+  color:rgba(232,224,245,0.4);
+  display:flex;align-items:center;gap:6px;
+}
+.signup-perk::before{content:"✓";color:#FF2CF2;font-size:0.75rem}
+
+/* ─ subscribe page ─ */
+.sub-wrap{max-width:600px;margin:0 auto;padding:60px 28px 100px}
+.sub-back{
+  font-family:'DM Mono',monospace;font-size:0.75rem;
+  color:rgba(232,224,245,0.4);
+  display:inline-flex;align-items:center;gap:8px;
+  margin-bottom:44px;transition:color 0.14s;
+}
+.sub-back:hover{color:#00F5FF}
+.sub-past{
+  margin-top:56px;
+  padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
+.sub-past h2{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.1rem;color:#fff;margin-bottom:18px;
+}
+.sub-issue{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  font-size:0.88rem;
+}
+.sub-issue-num{
+  font-family:'DM Mono',monospace;font-size:0.7rem;
+  color:#FF2CF2;white-space:nowrap;padding-top:2px;
+}
+.sub-issue-title{color:#fff;margin-bottom:3px;font-weight:500}
+.sub-issue-desc{color:rgba(232,224,245,0.45);font-size:0.84rem;line-height:1.5}
+
+@media(max-width:700px){
+  .signup-strip{padding:44px 18px 40px}
+  .sub-wrap{padding:40px 18px 80px}
+}
 .pg-wrap{max-width:1100px;margin:0 auto;padding:0 28px}
 .pg-back{
   font-family:'DM Mono',monospace;font-size:0.75rem;
@@ -290,23 +503,31 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 .pg-section{margin-bottom:36px}
 .pg-section h2{
-  font-family:'DM Mono',monospace;
-  font-size:0.72rem;
-  text-transform:uppercase;
-  letter-spacing:0.14em;
-  color:#FF2CF2;
-  margin-bottom:12px;
-  display:flex;align-items:center;gap:10px;
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:1.15rem;
+  color:var(--club-glow,#FF2CF2);
+  text-shadow:0 0 14px color-mix(in srgb,var(--club-glow,#FF2CF2) 45%,transparent);
+  margin-bottom:14px;
+  display:flex;align-items:center;gap:12px;
 }
-.pg-section h2::after{content:"";flex:1;height:1px;background:rgba(255,44,242,0.2)}
-.pg-section p{font-size:0.95rem;color:#b5aac8;line-height:1.65}
+.pg-section h2::before{
+  content:"";
+  width:4px;height:20px;
+  border-radius:2px;
+  background:var(--club-glow,#FF2CF2);
+  box-shadow:0 0 10px color-mix(in srgb,var(--club-glow,#FF2CF2) 70%,transparent);
+  flex-shrink:0;
+}
+.pg-section h2::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--club-glow,#FF2CF2) 18%,transparent)}
+.pg-section p{font-size:1.05rem;color:#fff;line-height:1.7;font-weight:400}
 
-.pg-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.pg-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .pg-pill{
-  font-family:'DM Mono',monospace;font-size:0.73rem;
-  padding:5px 14px;border-radius:999px;
-  border:1px solid rgba(255,44,242,0.35);
-  color:#FF2CF2;background:rgba(255,44,242,0.08);
+  font-family:'Inter',sans-serif;font-size:0.83rem;font-weight:500;
+  padding:6px 16px;border-radius:999px;
+  border:1px solid rgba(255,59,59,0.45);
+  color:#FF6B6B;background:rgba(255,59,59,0.1);
 }
 
 .info-box{
@@ -329,17 +550,20 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   color:rgba(232,224,245,0.35);text-transform:uppercase;letter-spacing:0.09em;
 }
 .info-row{
-  display:grid;grid-template-columns:100px 1fr;gap:10px;
-  padding:14px 22px;border-bottom:1px solid rgba(255,255,255,0.06);
-  align-items:start;font-size:0.86rem;
+  display:grid;grid-template-columns:110px 1fr;gap:12px;
+  padding:16px 22px;border-bottom:1px solid rgba(255,255,255,0.07);
+  align-items:start;
 }
 .info-row:last-child{border-bottom:none}
 .info-label{
-  font-family:'DM Mono',monospace;font-size:0.67rem;
-  text-transform:uppercase;letter-spacing:0.09em;
-  color:rgba(232,224,245,0.35);padding-top:1px;
+  font-family:'DM Mono',monospace;font-size:0.72rem;
+  font-weight:500;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:#FF3B3B;
+  text-shadow:0 0 8px rgba(255,59,59,0.4);
+  padding-top:2px;
 }
-.info-val{color:#e8e0f5;line-height:1.45}
+.info-val{color:#fff;line-height:1.55;font-size:0.97rem;font-weight:400}
 
 .pg-actions{display:flex;flex-direction:column;gap:9px;padding:18px 22px}
 .pg-btn{
@@ -441,7 +665,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </head>
 <body><script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "DC Dance Club Directory", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://dcdanceguide.com/9-30-club.html", "name": "9:30 Club"}, {"@type": "ListItem", "position": 2, "url": "https://dcdanceguide.com/black-cat-dc9.html", "name": "Black Cat / DC9"}, {"@type": "ListItem", "position": 3, "url": "https://dcdanceguide.com/bossa-bistro.html", "name": "Bossa Bistro"}, {"@type": "ListItem", "position": 4, "url": "https://dcdanceguide.com/cafe-citron.html", "name": "Cafe Citron"}, {"@type": "ListItem", "position": 5, "url": "https://dcdanceguide.com/culture.html", "name": "Culture"}, {"@type": "ListItem", "position": 6, "url": "https://dcdanceguide.com/dans-cafe.html", "name": "Dan's Cafe"}, {"@type": "ListItem", "position": 7, "url": "https://dcdanceguide.com/decades.html", "name": "Decades"}, {"@type": "ListItem", "position": 8, "url": "https://dcdanceguide.com/district-alley-on-h.html", "name": "District Alley on H"}, {"@type": "ListItem", "position": 9, "url": "https://dcdanceguide.com/echostage.html", "name": "Echostage"}, {"@type": "ListItem", "position": 10, "url": "https://dcdanceguide.com/flash.html", "name": "Flash"}, {"@type": "ListItem", "position": 11, "url": "https://dcdanceguide.com/focus-social-club.html", "name": "Focus Social Club"}, {"@type": "ListItem", "position": 12, "url": "https://dcdanceguide.com/grand-central.html", "name": "Grand Central"}, {"@type": "ListItem", "position": 13, "url": "https://dcdanceguide.com/heaven-and-hell.html", "name": "Heaven and Hell"}, {"@type": "ListItem", "position": 14, "url": "https://dcdanceguide.com/jimmy-valentines-lonely-hearts-club.html", "name": "Jimmy Valentine's Lonely Hearts Club"}, {"@type": "ListItem", "position": 15, "url": "https://dcdanceguide.com/johnny-pistolas.html", "name": "Johnny Pistolas"}, {"@type": "ListItem", "position": 16, "url": "https://dcdanceguide.com/little-miss-whiskey-s-golden-dollar.html", "name": "Little Miss Whiskey’s Golden Dollar"}, {"@type": "ListItem", "position": 17, "url": "https://dcdanceguide.com/madams-organ.html", "name": "Madam's Organ"}, {"@type": "ListItem", "position": 18, "url": "https://dcdanceguide.com/nellies-sports-bar.html", "name": "Nellie's Sports Bar"}, {"@type": "ListItem", "position": 19, "url": "https://dcdanceguide.com/ocean-lounge-dc.html", "name": "Ocean Lounge DC"}, {"@type": "ListItem", "position": 20, "url": "https://dcdanceguide.com/sax.html", "name": "SAX"}, {"@type": "ListItem", "position": 21, "url": "https://dcdanceguide.com/salazar.html", "name": "Salazar"}, {"@type": "ListItem", "position": 22, "url": "https://dcdanceguide.com/techo-palma-formerly-el-techo.html", "name": "Techo Palma (Formerly El Techo)"}, {"@type": "ListItem", "position": 23, "url": "https://dcdanceguide.com/the-park-at-14th.html", "name": "The Park at 14th"}, {"@type": "ListItem", "position": 24, "url": "https://dcdanceguide.com/twelve-after-twelve.html", "name": "Twelve After Twelve"}, {"@type": "ListItem", "position": 25, "url": "https://dcdanceguide.com/zeba-bar.html", "name": "Zeba Bar"}]}</script><header class="hdr">
   <a href="/" class="hdr-logo">DC<em>DANCE</em>GUIDE</a>
-  <a href="/contact" class="hdr-cta">List your venue →</a>
+  <nav class="hdr-nav">
+    <a href="/guides" class="hdr-nav-link">Guides &amp; Tips</a>
+    <a href="/subscribe" class="hdr-nav-link">Newsletter</a>
+    <a href="/contact" class="hdr-cta">List your venue →</a>
+  </nav>
 </header>
 <section class="site-hero">
   <div class="site-hero-inner">
@@ -465,252 +693,277 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <div class="venue-grid" id="grid">
 <a class="card" href="/9-30-club" data-hood="U Street Corridor" data-cats="HipHop-RnB|Indie-Alt|Retro" aria-label="View 9:30 Club">
-  <img class="card-img" src="https://washington.org/sites/default/files/glass_animals_at_930_club_lisa_walker_credit.jpg" alt="9:30 Club" loading="lazy">
+  <img class="card-img" src="https://washington.org/sites/default/files/glass_animals_at_930_club_lisa_walker_credit.jpg" alt="9:30 Club" loading="eager" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" fetchpriority="high">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
-    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">9:30 Club</div>
+    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">9:30 Club</div>
     <div class="card-tags"><span class="ctag">Pop</span><span class="ctag">Indie</span><span class="ctag">Throwbacks</span></div>
+    <div class="card-hours">Show-based — doors typically 7–9pm nightly</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/black-cat-dc9" data-hood="Shaw" data-cats="HipHop-RnB|Indie-Alt|Retro" aria-label="View Black Cat / DC9">
-  <img class="card-img" src="https://www.blackcatdc.com/images/460/red-room-1.jpg" alt="Black Cat / DC9" loading="lazy">
+  <img class="card-img" src="https://www.blackcatdc.com/images/460/red-room-1.jpg" alt="Black Cat / DC9" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Shaw</span>
-    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Black Cat / DC9</div>
+    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Black Cat / DC9</div>
     <div class="card-tags"><span class="ctag">Indie rock</span><span class="ctag">Alternative</span><span class="ctag">Synth-pop</span></div>
+    <div class="card-hours">Mon–Thu &amp; Sun 8pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/bossa-bistro" data-hood="Adams Morgan" data-cats="Latin|Live-Music|Global-Beats" aria-label="View Bossa Bistro">
-  <img class="card-img" src="http://bossadc.com/wp-content/uploads/2014/01/Food-and-music.jpg" alt="Bossa Bistro" loading="lazy">
+  <img class="card-img" src="https://bossadc.com/wp-content/uploads/2014/01/Food-and-music.jpg" alt="Bossa Bistro" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
-    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Bossa Bistro</div>
+    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Bossa Bistro</div>
     <div class="card-tags"><span class="ctag">Live Salsa</span><span class="ctag">Samba</span><span class="ctag">Jazz</span></div>
+    <div class="card-hours">Wed–Thu 5:30pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/cafe-citron" data-hood="Dupont Circle" data-cats="Latin|Global-Beats" aria-label="View Cafe Citron">
-  <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/57b210dbe3df28df0b8ea5d0/9eb54581-1215-401f-9183-282b2dabc313/processed_20250208_213204.jpg?format=2500w" alt="Cafe Citron" loading="lazy">
+  <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/57b210dbe3df28df0b8ea5d0/9eb54581-1215-401f-9183-282b2dabc313/processed_20250208_213204.jpg?format=800w" alt="Cafe Citron" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
-    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Cafe Citron</div>
+    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Cafe Citron</div>
     <div class="card-tags"><span class="ctag">Salsa</span><span class="ctag">Bachata</span><span class="ctag">Merengue</span></div>
+    <div class="card-hours">Wed 8pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/culture" data-hood="Northeast DC" data-cats="House-Techno|Indie-Alt|Global-Beats|EDM" aria-label="View Culture">
-  <img class="card-img" src="https://cdn.prod.website-files.com/63a4e30e8cfe919059ba8507/65b094232c768fb9eeb611c7_haydenjames-selects-09200.jpeg" alt="Culture" loading="lazy">
+  <img class="card-img" src="https://cdn.prod.website-files.com/63a4e30e8cfe919059ba8507/65b094232c768fb9eeb611c7_haydenjames-selects-09200.jpeg" alt="Culture" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Northeast DC</span>
-    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Culture</div>
+    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Culture</div>
     <div class="card-tags"><span class="ctag">House</span><span class="ctag">Techno</span><span class="ctag">Afrobeat</span></div>
+    <div class="card-hours">Event-based — check Instagram for schedule</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/dans-cafe" data-hood="Adams Morgan" data-cats="Open-Format" aria-label="View Dan&#x27;s Cafe">
-  <img class="card-img" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkADUebvdl6E7ktznJHiXBDbKZ6vAY7WUTmUany9gs87VBwzfn6uxE3rqh1Lsr2456vSmaQOjtGi8xRM1mC2R4S1_SyME-ilPeZNtuTJe_sqUooLptRzLL7PiKA1-WwLAle5IEt=s1360-w1360-h1020-rw" alt="Dan&#x27;s Cafe" loading="lazy">
+  <img class="card-img" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkADUebvdl6E7ktznJHiXBDbKZ6vAY7WUTmUany9gs87VBwzfn6uxE3rqh1Lsr2456vSmaQOjtGi8xRM1mC2R4S1_SyME-ilPeZNtuTJe_sqUooLptRzLL7PiKA1-WwLAle5IEt=s1360-w1360-h1020-rw" alt="Dan&#x27;s Cafe" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
-    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Dan&#x27;s Cafe</div>
+    <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">Dan&#x27;s Cafe</div>
     <div class="card-tags"><span class="ctag">Eclectic</span><span class="ctag">whatever&#x27;s on</span></div>
+    <div class="card-hours">Fri &amp; Sat 7pm–3am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/decades" data-hood="Dupont Circle" data-cats="HipHop-RnB|Retro" aria-label="View Decades">
-  <img class="card-img" src="https://i0.wp.com/decadesdc.com/wp-content/uploads/2024/02/bg-decades.jpg" alt="Decades" loading="lazy">
+  <img class="card-img" src="https://i0.wp.com/decadesdc.com/wp-content/uploads/2024/02/bg-decades.jpg" alt="Decades" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
-    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Decades</div>
+    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Decades</div>
     <div class="card-tags"><span class="ctag">Retro pop</span><span class="ctag">Hip-Hop</span><span class="ctag">Top 40</span></div>
+    <div class="card-hours">Thu 10pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/district-alley-on-h" data-hood="H Street Corridor" data-cats="HipHop-RnB|Live-Music" aria-label="View District Alley on H">
-  <img class="card-img" src="https://static.wixstatic.com/media/74f742_14d1b7f5d0634ef28eba5fb3e8aa85ef~mv2.jpg/v1/fill/w_1136,h_736,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/74f742_14d1b7f5d0634ef28eba5fb3e8aa85ef~mv2.jpg" alt="District Alley on H" loading="lazy">
+  <img class="card-img" src="https://static.wixstatic.com/media/74f742_14d1b7f5d0634ef28eba5fb3e8aa85ef~mv2.jpg/v1/fill/w_800,h_736,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/74f742_14d1b7f5d0634ef28eba5fb3e8aa85ef~mv2.jpg" alt="District Alley on H" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
-    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">District Alley on H</div>
+    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">District Alley on H</div>
     <div class="card-tags"><span class="ctag">Live music</span><span class="ctag">R&amp;B</span><span class="ctag">Soul</span></div>
+    <div class="card-hours">Thu 7pm–12am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/echostage" data-hood="Northeast DC" data-cats="House-Techno|EDM" aria-label="View Echostage">
-  <img class="card-img" src="https://echostage.com/wp-content/uploads/2026/06/MartinGarrix2026_0607_010337-906068_@jordansabillo-scaled.jpg" alt="Echostage" loading="lazy">
+  <img class="card-img" src="https://echostage.com/wp-content/uploads/2026/06/MartinGarrix2026_0607_010337-906068_@jordansabillo-scaled.jpg" alt="Echostage" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Northeast DC</span>
-    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Echostage</div>
+    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Echostage</div>
     <div class="card-tags"><span class="ctag">Heavy EDM</span><span class="ctag">Dubstep</span><span class="ctag">Trance</span></div>
+    <div class="card-hours">Fri &amp; Sat 10pm–2am (event-based — check calendar)</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/flash" data-hood="U Street Corridor" data-cats="House-Techno|LGBTQ" aria-label="View Flash">
-  <img class="card-img" src="https://epyck.s3.amazonaws.com/1a23bd340f314e0d480687fa19395c47_image.JPG" alt="Flash" loading="lazy">
+  <img class="card-img" src="https://epyck.s3.amazonaws.com/1a23bd340f314e0d480687fa19395c47_image.JPG" alt="Flash" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
-    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Flash</div>
+    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Flash</div>
     <div class="card-tags"><span class="ctag">House</span><span class="ctag">Techno</span><span class="ctag">Drum &amp; Bass</span></div>
+    <div class="card-hours">Thu 10pm–3am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/focus-social-club" data-hood="H Street Corridor" data-cats="HipHop-RnB" aria-label="View Focus Social Club">
-  <img class="card-img" src="https://lirp.cdn-website.com/140a0e2d/dms3rep/multi/opt/pexels-photo-16873275-1039h.png" alt="Focus Social Club" loading="lazy">
+  <img class="card-img" src="https://lirp.cdn-website.com/140a0e2d/dms3rep/multi/opt/pexels-photo-16873275-1039h.png" alt="Focus Social Club" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
-    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Focus Social Club</div>
+    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Focus Social Club</div>
     <div class="card-tags"><span class="ctag">Open format</span><span class="ctag">R&amp;B</span><span class="ctag">Hip-Hop</span></div>
+    <div class="card-hours">Thu 5pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/grand-central" data-hood="Adams Morgan" data-cats="HipHop-RnB" aria-label="View Grand Central">
-  <img class="card-img" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnTQ-ZcdCOjgJr956TN4CxcNnjcrRvxBeMd0WAUoVfOuT74kHi-L7JM_euydJ_hXhMKYCQ2Ak6efy0TCs2O_8gTuHLunqvzvjsnRiWlzzsmuw89Q1E44nFejoN5ykmwtOLAHKbzCw=s1360-w1360-h1020-rw" alt="Grand Central" loading="lazy">
+  <img class="card-img" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnTQ-ZcdCOjgJr956TN4CxcNnjcrRvxBeMd0WAUoVfOuT74kHi-L7JM_euydJ_hXhMKYCQ2Ak6efy0TCs2O_8gTuHLunqvzvjsnRiWlzzsmuw89Q1E44nFejoN5ykmwtOLAHKbzCw=s1360-w1360-h1020-rw" alt="Grand Central" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
-    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Grand Central</div>
+    <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">Grand Central</div>
     <div class="card-tags"><span class="ctag">Top 40</span><span class="ctag">Sing-alongs</span><span class="ctag">Hip-Hop</span></div>
+    <div class="card-hours">Wed 5pm–11pm</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/heaven-and-hell" data-hood="Adams Morgan" data-cats="HipHop-RnB|House-Techno|Indie-Alt" aria-label="View Heaven and Hell">
-  <img class="card-img" src="https://www.heavenandhellclub.com/imgs/pic.jpg" alt="Heaven and Hell" loading="lazy">
+  <img class="card-img" src="https://www.heavenandhellclub.com/imgs/pic.jpg" alt="Heaven and Hell" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
     <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Heaven and Hell</div>
     <div class="card-tags"><span class="ctag">Hip-Hop</span><span class="ctag">Techno</span><span class="ctag">Punk</span></div>
+    <div class="card-hours">Mon &amp; Wed–Thu &amp; Sun 5pm–1:30am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/jimmy-valentines-lonely-hearts-club" data-hood="Northeast DC" data-cats="House-Techno|Live-Music|Indie-Alt" aria-label="View Jimmy Valentine&#x27;s Lonely Hearts Club">
-  <img class="card-img" src="https://www.jimmyvalentineslhc.com/wp-content/uploads/2015/03/IMG_9818-1024x705.jpg" alt="Jimmy Valentine&#x27;s Lonely Hearts Club" loading="lazy">
+  <img class="card-img" src="https://www.jimmyvalentineslhc.com/wp-content/uploads/2015/03/IMG_9818-1024x705.jpg" alt="Jimmy Valentine&#x27;s Lonely Hearts Club" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Northeast DC</span>
     <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Jimmy Valentine&#x27;s Lonely Hearts Club</div>
     <div class="card-tags"><span class="ctag">Deep House</span><span class="ctag">Tech-House</span><span class="ctag">Drum &amp; Bass</span></div>
+    <div class="card-hours">Mon–Thu &amp; Sun 8pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/johnny-pistolas" data-hood="Adams Morgan" data-cats="HipHop-RnB|Latin|Global-Beats" aria-label="View Johnny Pistolas">
-  <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/63750f49a69f2035928cfc1b/cee08ed2-43b3-472d-97ec-2ba91234872e/Johnny_Pistolas_Washington_DC-ZEN_LENS%2823-of-39%29_600kb.jpg?format=2500w" alt="Johnny Pistolas" loading="lazy">
+  <img class="card-img" src="https://images.squarespace-cdn.com/content/v1/63750f49a69f2035928cfc1b/cee08ed2-43b3-472d-97ec-2ba91234872e/Johnny_Pistolas_Washington_DC-ZEN_LENS%2823-of-39%29_600kb.jpg?format=800w" alt="Johnny Pistolas" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
     <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Johnny Pistolas</div>
     <div class="card-tags"><span class="ctag">Latin</span><span class="ctag">Reggaeton</span><span class="ctag">Top 40</span></div>
+    <div class="card-hours">Wed–Thu 4pm–11pm</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/little-miss-whiskey-s-golden-dollar" data-hood="H Street Corridor" data-cats="HipHop-RnB|Indie-Alt|Retro" aria-label="View Little Miss Whiskey’s Golden Dollar">
-  <img class="card-img" src="https://i0.wp.com/www.littlemisswhiskeys.com/wp-content/uploads/2015/03/IMG_7544.jpg?zoom=2&amp;resize=1280%2C640" alt="Little Miss Whiskey’s Golden Dollar" loading="lazy">
+  <img class="card-img" src="https://i0.wp.com/www.littlemisswhiskeys.com/wp-content/uploads/2015/03/IMG_7544.jpg?zoom=2&amp;resize=1280%2C640" alt="Little Miss Whiskey’s Golden Dollar" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
-    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Little Miss Whiskey’s Golden Dollar</div>
+    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Little Miss Whiskey’s Golden Dollar</div>
     <div class="card-tags"><span class="ctag">&#x27;80s New Wave</span><span class="ctag">&#x27;90s Hip-Hop</span><span class="ctag">Synth-pop</span></div>
+    <div class="card-hours">Mon–Thu &amp; Sun 5pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/madams-organ" data-hood="Adams Morgan" data-cats="HipHop-RnB|Live-Music|Retro" aria-label="View Madam&#x27;s Organ">
-  <img class="card-img" src="https://madamsorgan.com/wp-content/uploads/cache/2022/01/bear-shot/1838819779.jpg" alt="Madam&#x27;s Organ" loading="lazy">
+  <img class="card-img" src="https://madamsorgan.com/wp-content/uploads/cache/2022/01/bear-shot/1838819779.jpg" alt="Madam&#x27;s Organ" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Adams Morgan</span>
-    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Madam&#x27;s Organ</div>
+    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Madam&#x27;s Organ</div>
     <div class="card-tags"><span class="ctag">Live Blues</span><span class="ctag">Soul</span><span class="ctag">R&amp;B</span></div>
+    <div class="card-hours">Mon–Thu &amp; Sun 5pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/nellies-sports-bar" data-hood="U Street Corridor" data-cats="HipHop-RnB|LGBTQ" aria-label="View Nellie&#x27;s Sports Bar">
-  <img class="card-img" src="https://cdn.nelliessportsbar.com/2021/09/fvs5111-edit-copy-2-2048x1365-2-e1631585088486-1024x573.jpeg" alt="Nellie&#x27;s Sports Bar" loading="lazy">
+  <img class="card-img" src="https://cdn.nelliessportsbar.com/2021/09/fvs5111-edit-copy-2-2048x1365-2-e1631585088486-1024x573.jpeg" alt="Nellie&#x27;s Sports Bar" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
     <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">Nellie&#x27;s Sports Bar</div>
     <div class="card-tags"><span class="ctag">Pop remixes</span><span class="ctag">Top 40</span><span class="ctag">Drag performances</span></div>
+    <div class="card-hours">Tue 5pm–1am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/ocean-lounge-dc" data-hood="H Street Corridor" data-cats="HipHop-RnB|Latin|Global-Beats" aria-label="View Ocean Lounge DC">
-  <img class="card-img" src="https://static.wixstatic.com/media/df3e20_a1f25ff5f6074366bd76fb15e07232ba~mv2.webp/v1/fill/w_1792,h_555,al_c,q_85,enc_avif,quality_auto/df3e20_a1f25ff5f6074366bd76fb15e07232ba~mv2.webp" alt="Ocean Lounge DC" loading="lazy">
+  <img class="card-img" src="https://static.wixstatic.com/media/df3e20_a1f25ff5f6074366bd76fb15e07232ba~mv2.webp/v1/fill/w_800,h_555,al_c,q_85,enc_avif,quality_auto/df3e20_a1f25ff5f6074366bd76fb15e07232ba~mv2.webp" alt="Ocean Lounge DC" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">H Street Corridor</span>
-    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Ocean Lounge DC</div>
+    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Ocean Lounge DC</div>
     <div class="card-tags"><span class="ctag">Hip-Hop</span><span class="ctag">R&amp;B</span><span class="ctag">Top 40</span></div>
+    <div class="card-hours">Tue 6pm–12am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/sax" data-hood="Downtown" data-cats="House-Techno|HipHop-RnB|Indie-Alt" aria-label="View SAX">
-  <img class="card-img" src="https://images.getbento.com/accounts/942562815b991eabb2ac3155c0002622/media/images/1955sax-012122-01745.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.5" alt="SAX" loading="lazy">
+  <img class="card-img" src="https://images.getbento.com/accounts/942562815b991eabb2ac3155c0002622/media/images/1955sax-012122-01745.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.5" alt="SAX" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Downtown</span>
-    <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">SAX</div>
+    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">SAX</div>
     <div class="card-tags"><span class="ctag">Top 40 remixes</span><span class="ctag">commercial house</span></div>
+    <div class="card-hours">Wed &amp; Fri 11pm–3am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/salazar" data-hood="U Street Corridor" data-cats="HipHop-RnB|Latin|Retro|Global-Beats" aria-label="View Salazar">
-  <img class="card-img" src="https://images.getbento.com/accounts/d5a076c42d8e032f1e81d08b613b06f9/media/images/98200_TES3113.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.58&amp;fp-y=0.43" alt="Salazar" loading="lazy">
+  <img class="card-img" src="https://images.getbento.com/accounts/d5a076c42d8e032f1e81d08b613b06f9/media/images/98200_TES3113.jpg?w=1200&amp;fit=crop&amp;auto=compress,format&amp;cs=origin&amp;crop=focalpoint&amp;fp-x=0.58&amp;fp-y=0.43" alt="Salazar" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">U Street Corridor</span>
-    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Salazar</div>
+    <div class="card-name" style="color:#FFEE00;text-shadow:0 0 20px #FFEE0055">Salazar</div>
     <div class="card-tags"><span class="ctag">Top 40 remixes</span><span class="ctag">Reggaeton</span><span class="ctag">Throwbacks</span></div>
+    <div class="card-hours">Tue–Wed 4pm–12am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/techo-palma-formerly-el-techo" data-hood="Shaw" data-cats="House-Techno|Latin|Global-Beats" aria-label="View Techo Palma (Formerly El Techo)">
-  <img class="card-img" src="https://i0.wp.com/techopalma.com/wp-content/uploads/2026/05/TechoPalma2026_0508_010238-09106_%40TaniaHauyon.jpg?w=3000&amp;ssl=1" alt="Techo Palma (Formerly El Techo)" loading="lazy">
+  <img class="card-img" src="https://i0.wp.com/techopalma.com/wp-content/uploads/2026/05/TechoPalma2026_0508_010238-09106_%40TaniaHauyon.jpg?w=3000&amp;ssl=1" alt="Techo Palma (Formerly El Techo)" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Shaw</span>
-    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Techo Palma (Formerly El Techo)</div>
+    <div class="card-name" style="color:#C45EFF;text-shadow:0 0 20px #C45EFF55">Techo Palma (Formerly El Techo)</div>
     <div class="card-tags"><span class="ctag">Latin House</span><span class="ctag">Afro-House</span><span class="ctag">Tropical Beats</span></div>
+    <div class="card-hours">Tue &amp; Thu 5pm–12am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/the-park-at-14th" data-hood="Downtown" data-cats="HipHop-RnB" aria-label="View The Park at 14th">
-  <img class="card-img" src="https://park14.com/wp-content/uploads/2023/07/Nightlife-is-Back.jpg" alt="The Park at 14th" loading="lazy">
+  <img class="card-img" src="https://park14.com/wp-content/uploads/2023/07/Nightlife-is-Back.jpg" alt="The Park at 14th" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Downtown</span>
     <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">The Park at 14th</div>
     <div class="card-tags"><span class="ctag">Hip-Hop</span><span class="ctag">R&amp;B</span><span class="ctag">Top 40</span></div>
+    <div class="card-hours">Thu 5pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/twelve-after-twelve" data-hood="Dupont Circle" data-cats="House-Techno|HipHop-RnB|Latin|Global-Beats" aria-label="View Twelve After Twelve">
-  <img class="card-img" src="https://static.wixstatic.com/media/373352_30a8417f1f9f409ca9353f7f9ec948c3~mv2.jpg/v1/fill/w_1279,h_1279,al_c,q_85,enc_auto/373352_30a8417f1f9f409ca9353f7f9ec948c3~mv2.jpg" alt="Twelve After Twelve" loading="lazy">
+  <img class="card-img" src="https://static.wixstatic.com/media/373352_30a8417f1f9f409ca9353f7f9ec948c3~mv2.jpg/v1/fill/w_800,h_1279,al_c,q_85,enc_auto/373352_30a8417f1f9f409ca9353f7f9ec948c3~mv2.jpg" alt="Twelve After Twelve" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Dupont Circle</span>
-    <div class="card-name" style="color:#00F5FF;text-shadow:0 0 20px #00F5FF55">Twelve After Twelve</div>
+    <div class="card-name" style="color:#39FF14;text-shadow:0 0 20px #39FF1455">Twelve After Twelve</div>
     <div class="card-tags"><span class="ctag">House</span><span class="ctag">Deep House</span><span class="ctag">Reggaeton</span></div>
+    <div class="card-hours">Fri &amp; Sat 10pm–3am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
 <a class="card" href="/zeba-bar" data-hood="Columbia Heights" data-cats="HipHop-RnB|Global-Beats" aria-label="View Zeba Bar">
-  <img class="card-img" src="https://washingtonian.com/wp-content/uploads/2016/05/l8-1.jpg" alt="Zeba Bar" loading="lazy">
+  <img class="card-img" src="https://washingtonian.com/wp-content/uploads/2016/05/l8-1.jpg" alt="Zeba Bar" loading="lazy" width="800" height="600" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" decoding="async">
   <div class="card-overlay"></div>
   <div class="card-body">
     <span class="card-hood">Columbia Heights</span>
-    <div class="card-name" style="color:#FF5C35;text-shadow:0 0 20px #FF5C3555">Zeba Bar</div>
+    <div class="card-name" style="color:#FF2CF2;text-shadow:0 0 20px #FF2CF255">Zeba Bar</div>
     <div class="card-tags"><span class="ctag">Afrobeats</span><span class="ctag">Reggae</span><span class="ctag">Dancehall</span></div>
+    <div class="card-hours">Mon–Thu &amp; Sun 5pm–2am</div>
   </div>
   <div class="card-arrow">↗</div>
 </a>
@@ -730,11 +983,34 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <p>Use the filters above to find <strong>DC nightclubs</strong> by neighborhood or music genre. New venues are added as the scene shifts — <a href="/contact">submit your club here</a> to get listed.</p>
   </div>
 </div>
-<footer class="ftr">
+<section class="signup-strip">
+  <div class="signup-strip-eyebrow">DC Nightlife Newsletter</div>
+  <h2>Your weekend <em>starts here.</em></h2>
+  <p class="signup-strip-sub">Club recommendations, themed night alerts, new venue drops, and DC dance scene news — straight to your inbox. No spam, ever.</p>
+  <form class="signup-form" id="signup-strip-main">
+    <input class="signup-input" type="email" name="EMAIL" placeholder="your@email.com" required aria-label="Email address">
+    <!-- Mailchimp honeypot -->
+    <div style="position:absolute;left:-5000px" aria-hidden="true">
+      <input type="text" name="b_b18bcb0c472ccb95ae79c9c6f_f804d87d6e" tabindex="-1" value="">
+    </div>
+    <button class="signup-btn" type="submit">Subscribe →</button>
+  </form>
+  <div class="signup-status" id="signup-strip-main-status" aria-live="polite"></div>
+  <div class="signup-perks">
+    <span class="signup-perk">Club picks every week</span>
+    <span class="signup-perk">Themed night alerts</span>
+    <span class="signup-perk">New venues first</span>
+    <span class="signup-perk">Free forever</span>
+  </div>
+</section><footer class="ftr">
   <div class="ftr-logo">DC<em>DANCE</em>GUIDE</div>
   <p class="ftr-note">Washington DC's curated dance club directory · dcdanceguide.com<br>
   Not affiliated with any venue. Always call ahead — covers and hours change.</p>
-  <a href="/contact" class="ftr-cta">List your venue →</a>
+  <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+    <a href="/guides" class="ftr-cta" style="color:#FFEE00;border-bottom-color:rgba(255,238,0,0.35)">Guides &amp; Tips →</a>
+    <a href="/subscribe" class="ftr-cta" style="color:#FF2CF2;border-bottom-color:rgba(255,44,242,0.35)">Newsletter →</a>
+    <a href="/contact" class="ftr-cta">List your venue →</a>
+  </div>
 </footer><script>
 (function(){
   var activeHood = 'all';
@@ -779,6 +1055,68 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   });
 
   filter();
+})();
+</script><script>
+(function(){
+  // ── Mailchimp AJAX signup ─────────────────────────────────────────────────
+  // Replace MAILCHIMP_ACTION_URL with your Mailchimp form action URL
+  // Get it from: Mailchimp → Audience → Signup forms → Embedded forms → copy action=""
+  var MC_URL = 'https://dcdanceguide.us20.list-manage.com/subscribe/post?u=b18bcb0c472ccb95ae79c9c6f&id=f804d87d6e&f_id=003ac7e3f0';
+
+  function handleSignup(formId) {
+    var form   = document.getElementById(formId);
+    var status = document.getElementById(formId + '-status');
+    if (!form || !status) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = form.querySelector('[name="EMAIL"]').value.trim();
+      if (!email) return;
+
+      var btn = form.querySelector('.signup-btn');
+      btn.disabled = true;
+      btn.textContent = 'Subscribing…';
+      status.textContent = '';
+      status.className = 'signup-status';
+
+      // Mailchimp requires JSONP for cross-origin embedded forms
+      // Swap /post? to /post-json? and append &c=callback
+      var url = MC_URL.replace('/post?', '/post-json?') + '&c=mcCallback&EMAIL=' + encodeURIComponent(email);
+
+      window.mcCallback = function(data) {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe →';
+        if (data.result === 'success') {
+          form.style.display = 'none';
+          status.textContent = '🎉 You\'re in! Check your inbox for a confirmation.';
+          status.className = 'signup-status ok';
+        } else {
+          var msg = data.msg || 'Something went wrong — please try again.';
+          // Strip Mailchimp's HTML error tags
+          msg = msg.replace(/<[^>]+>/g, '');
+          if (msg.indexOf('already subscribed') > -1) msg = 'You\'re already on the list!';
+          status.textContent = msg;
+          status.className = 'signup-status err';
+        }
+        delete window.mcCallback;
+        if (script && script.parentNode) script.parentNode.removeChild(script);
+      };
+
+      var script = document.createElement('script');
+      script.src = url;
+      script.onerror = function() {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe →';
+        status.textContent = 'Connection error — please try again.';
+        status.className = 'signup-status err';
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  // Wire up all signup forms on the page
+  ['signup-strip-main','signup-strip-club'].forEach(handleSignup);
+  handleSignup('subscribe-form-main');
 })();
 </script>
 </body>
