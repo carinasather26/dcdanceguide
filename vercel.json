@@ -55,6 +55,50 @@
       "destination": "/grand-central.html"
     },
     {
+      "source": "/guide-adams-morgan-nightlife-guide",
+      "destination": "/guide-adams-morgan-nightlife-guide.html"
+    },
+    {
+      "source": "/guide-best-house-techno-clubs-dc",
+      "destination": "/guide-best-house-techno-clubs-dc.html"
+    },
+    {
+      "source": "/guide-best-latin-clubs-dc",
+      "destination": "/guide-best-latin-clubs-dc.html"
+    },
+    {
+      "source": "/guide-best-rooftop-bars-dc-nightlife",
+      "destination": "/guide-best-rooftop-bars-dc-nightlife.html"
+    },
+    {
+      "source": "/guide-dc-clubs-open-after-2am",
+      "destination": "/guide-dc-clubs-open-after-2am.html"
+    },
+    {
+      "source": "/guide-dc-nightlife-dress-code-guide",
+      "destination": "/guide-dc-nightlife-dress-code-guide.html"
+    },
+    {
+      "source": "/guide-dc-nightlife-guide-first-timers",
+      "destination": "/guide-dc-nightlife-guide-first-timers.html"
+    },
+    {
+      "source": "/guide-free-cover-charge-dc-nightlife",
+      "destination": "/guide-free-cover-charge-dc-nightlife.html"
+    },
+    {
+      "source": "/guide-h-street-nightlife-guide",
+      "destination": "/guide-h-street-nightlife-guide.html"
+    },
+    {
+      "source": "/guide-u-street-corridor-nightlife-guide",
+      "destination": "/guide-u-street-corridor-nightlife-guide.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html"
+    },
+    {
       "source": "/heaven-and-hell",
       "destination": "/heaven-and-hell.html"
     },
@@ -109,50 +153,6 @@
     {
       "source": "/zeba-bar",
       "destination": "/zeba-bar.html"
-    },
-    {
-      "source": "/guides",
-      "destination": "/guides/index.html"
-    },
-    {
-      "source": "/guides/adams-morgan-nightlife-guide",
-      "destination": "/guides/adams-morgan-nightlife-guide.html"
-    },
-    {
-      "source": "/guides/best-house-techno-clubs-dc",
-      "destination": "/guides/best-house-techno-clubs-dc.html"
-    },
-    {
-      "source": "/guides/best-latin-clubs-dc",
-      "destination": "/guides/best-latin-clubs-dc.html"
-    },
-    {
-      "source": "/guides/best-rooftop-bars-dc-nightlife",
-      "destination": "/guides/best-rooftop-bars-dc-nightlife.html"
-    },
-    {
-      "source": "/guides/dc-clubs-open-after-2am",
-      "destination": "/guides/dc-clubs-open-after-2am.html"
-    },
-    {
-      "source": "/guides/dc-nightlife-dress-code-guide",
-      "destination": "/guides/dc-nightlife-dress-code-guide.html"
-    },
-    {
-      "source": "/guides/dc-nightlife-guide-first-timers",
-      "destination": "/guides/dc-nightlife-guide-first-timers.html"
-    },
-    {
-      "source": "/guides/free-cover-charge-dc-nightlife",
-      "destination": "/guides/free-cover-charge-dc-nightlife.html"
-    },
-    {
-      "source": "/guides/h-street-nightlife-guide",
-      "destination": "/guides/h-street-nightlife-guide.html"
-    },
-    {
-      "source": "/guides/u-street-corridor-nightlife-guide",
-      "destination": "/guides/u-street-corridor-nightlife-guide.html"
     }
   ]
 }
