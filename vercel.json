@@ -7,44 +7,8 @@
       "destination": "/guides/index.html"
     },
     {
-      "source": "/guides/best-house-techno-clubs-dc",
-      "destination": "/guides/best-house-techno-clubs-dc.html"
-    },
-    {
-      "source": "/guides/dc-clubs-open-after-2am",
-      "destination": "/guides/dc-clubs-open-after-2am.html"
-    },
-    {
-      "source": "/guides/free-cover-charge-dc-nightlife",
-      "destination": "/guides/free-cover-charge-dc-nightlife.html"
-    },
-    {
-      "source": "/guides/best-latin-clubs-dc",
-      "destination": "/guides/best-latin-clubs-dc.html"
-    },
-    {
-      "source": "/guides/u-street-corridor-nightlife-guide",
-      "destination": "/guides/u-street-corridor-nightlife-guide.html"
-    },
-    {
-      "source": "/guides/adams-morgan-nightlife-guide",
-      "destination": "/guides/adams-morgan-nightlife-guide.html"
-    },
-    {
-      "source": "/guides/h-street-nightlife-guide",
-      "destination": "/guides/h-street-nightlife-guide.html"
-    },
-    {
-      "source": "/guides/best-rooftop-bars-dc-nightlife",
-      "destination": "/guides/best-rooftop-bars-dc-nightlife.html"
-    },
-    {
-      "source": "/guides/dc-nightlife-dress-code-guide",
-      "destination": "/guides/dc-nightlife-dress-code-guide.html"
-    },
-    {
-      "source": "/guides/dc-nightlife-guide-first-timers",
-      "destination": "/guides/dc-nightlife-guide-first-timers.html"
+      "source": "/guides/:path*",
+      "destination": "/guides/:path*.html"
     },
     {
       "source": "/9-30-club",
