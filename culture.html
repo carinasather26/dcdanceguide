@@ -42,39 +42,80 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   position:sticky;top:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 28px;
-  height:60px;
-  background:rgba(6,0,16,0.88);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,0.07);
+  height:68px;
+  background:rgba(6,0,16,0.94);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 .hdr-logo{
   font-family:'Syne',sans-serif;
   font-weight:800;
-  font-size:1.15rem;
+  font-size:1.2rem;
   letter-spacing:-0.01em;
   color:#fff;
   text-transform:uppercase;
   display:flex;align-items:center;gap:2px;
+  flex-shrink:0;
 }
 .hdr-logo em{
   font-style:normal;
   color:#FF2CF2;
   text-shadow:0 0 12px rgba(255,44,242,0.7);
 }
-.hdr-cta{
-  font-family:'DM Mono',monospace;
-  font-size:0.75rem;
-  color:rgba(232,224,245,0.55);
-  border:1px solid rgba(255,255,255,0.12);
-  padding:6px 14px;
-  border-radius:999px;
-  transition:all 0.15s;
+.hdr-nav{
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
-.hdr-cta:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
+.hdr-nav-link{
+  font-family:'Syne',sans-serif;
+  font-weight:700;
+  font-size:0.92rem;
+  letter-spacing:0.01em;
+  color:#4D9FFF;
+  text-shadow:0 0 12px rgba(77,159,255,0.6);
+  padding:8px 16px;
+  border-radius:8px;
+  border:1px solid rgba(77,159,255,0.25);
+  background:rgba(77,159,255,0.07);
+  transition:all 0.15s;
+  white-space:nowrap;
+}
+.hdr-nav-link:hover{
+  color:#fff;
+  background:rgba(77,159,255,0.18);
+  border-color:rgba(77,159,255,0.6);
+  text-shadow:0 0 16px rgba(77,159,255,0.85);
+  box-shadow:0 0 18px rgba(77,159,255,0.25);
+}
+.hdr-cta{
+  font-family:'Syne',sans-serif;
+  font-weight:700;
+  font-size:0.92rem;
+  letter-spacing:0.01em;
+  color:#0a0f1a;
+  background:#4D9FFF;
+  border:1px solid #4D9FFF;
+  padding:8px 18px;
+  border-radius:8px;
+  transition:all 0.15s;
+  white-space:nowrap;
+  box-shadow:0 0 20px rgba(77,159,255,0.45);
+  text-shadow:none;
+}
+.hdr-cta:hover{
+  background:#74B5FF;
+  border-color:#74B5FF;
+  box-shadow:0 0 28px rgba(77,159,255,0.7);
+}
+@media(max-width:640px){
+  .hdr-nav-link{font-size:0.8rem;padding:7px 11px}
+  .hdr-cta{font-size:0.8rem;padding:7px 12px}
+}
 
 /* ─ filter bar ─ */
 .filters{
-  position:sticky;top:60px;z-index:90;
+  position:sticky;top:68px;z-index:90;
   background:rgba(6,0,16,0.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(255,255,255,0.07);
@@ -632,9 +673,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </head>
 <body><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NightClub", "name": "Culture", "url": "https://dcdanceguide.com/culture.html", "image": "https://cdn.prod.website-files.com/63a4e30e8cfe919059ba8507/65b094232c768fb9eeb611c7_haydenjames-selects-09200.jpeg", "description": "Culture in Northeast DC, DC. independent underground promoter showcases and traveling label nights.", "address": {"@type": "PostalAddress", "addressLocality": "Washington", "addressRegion": "DC", "addressCountry": "US"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Directory", "item": "https://dcdanceguide.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Culture", "item": "https://dcdanceguide.com/culture.html"}]}</script><header class="hdr">
   <a href="/" class="hdr-logo">DC<em>DANCE</em>GUIDE</a>
-  <nav style="display:flex;align-items:center;gap:16px">
-    <a href="/guides" style="font-family:'DM Mono',monospace;font-size:0.75rem;color:rgba(232,224,245,0.55);transition:color 0.14s" onmouseover="this.style.color='#FFEE00'" onmouseout="this.style.color='rgba(232,224,245,0.55)'">Guides &amp; Tips</a>
-    <a href="/subscribe" style="font-family:'DM Mono',monospace;font-size:0.75rem;color:rgba(232,224,245,0.55);transition:color 0.14s" onmouseover="this.style.color='#FF2CF2'" onmouseout="this.style.color='rgba(232,224,245,0.55)'">Newsletter</a>
+  <nav class="hdr-nav">
+    <a href="/guides" class="hdr-nav-link">Guides &amp; Tips</a>
+    <a href="/subscribe" class="hdr-nav-link">Newsletter</a>
     <a href="/contact" class="hdr-cta">List your venue →</a>
   </nav>
 </header>

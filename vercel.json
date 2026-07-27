@@ -1,14 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/guides",
-      "destination": "/guides/index.html"
-    },
-    {
-      "source": "/guides/:path*",
-      "destination": "/guides/:path*.html"
-    }
-  ]
+  "trailingSlash": false
 }

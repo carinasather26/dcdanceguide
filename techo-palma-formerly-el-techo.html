@@ -42,9 +42,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   position:sticky;top:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 28px;
-  height:66px;
-  background:rgba(6,0,16,0.92);
-  backdrop-filter:blur(16px);
+  height:68px;
+  background:rgba(6,0,16,0.94);
+  backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
 .hdr-logo{
@@ -65,49 +65,57 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hdr-nav{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:8px;
 }
 .hdr-nav-link{
-  font-family:'Inter',sans-serif;
-  font-weight:600;
-  font-size:0.88rem;
+  font-family:'Syne',sans-serif;
+  font-weight:700;
+  font-size:0.92rem;
+  letter-spacing:0.01em;
   color:#4D9FFF;
-  text-shadow:0 0 10px rgba(77,159,255,0.45);
-  padding:7px 14px;
+  text-shadow:0 0 12px rgba(77,159,255,0.6);
+  padding:8px 16px;
   border-radius:8px;
-  border:1px solid rgba(77,159,255,0.2);
-  background:rgba(77,159,255,0.06);
+  border:1px solid rgba(77,159,255,0.25);
+  background:rgba(77,159,255,0.07);
   transition:all 0.15s;
   white-space:nowrap;
 }
 .hdr-nav-link:hover{
   color:#fff;
-  background:rgba(77,159,255,0.15);
-  border-color:rgba(77,159,255,0.5);
-  text-shadow:0 0 14px rgba(77,159,255,0.7);
+  background:rgba(77,159,255,0.18);
+  border-color:rgba(77,159,255,0.6);
+  text-shadow:0 0 16px rgba(77,159,255,0.85);
+  box-shadow:0 0 18px rgba(77,159,255,0.25);
 }
 .hdr-cta{
-  font-family:'Inter',sans-serif;
-  font-weight:600;
-  font-size:0.88rem;
-  color:#fff;
+  font-family:'Syne',sans-serif;
+  font-weight:700;
+  font-size:0.92rem;
+  letter-spacing:0.01em;
+  color:#0a0f1a;
   background:#4D9FFF;
   border:1px solid #4D9FFF;
-  padding:7px 16px;
+  padding:8px 18px;
   border-radius:8px;
   transition:all 0.15s;
   white-space:nowrap;
-  box-shadow:0 0 16px rgba(77,159,255,0.35);
+  box-shadow:0 0 20px rgba(77,159,255,0.45);
+  text-shadow:none;
 }
 .hdr-cta:hover{
-  background:#6BAFFF;
-  border-color:#6BAFFF;
-  box-shadow:0 0 24px rgba(77,159,255,0.6);
+  background:#74B5FF;
+  border-color:#74B5FF;
+  box-shadow:0 0 28px rgba(77,159,255,0.7);
+}
+@media(max-width:640px){
+  .hdr-nav-link{font-size:0.8rem;padding:7px 11px}
+  .hdr-cta{font-size:0.8rem;padding:7px 12px}
 }
 
 /* ─ filter bar ─ */
 .filters{
-  position:sticky;top:66px;z-index:90;
+  position:sticky;top:68px;z-index:90;
   background:rgba(6,0,16,0.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(255,255,255,0.07);
