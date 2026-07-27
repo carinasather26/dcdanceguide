@@ -42,39 +42,72 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   position:sticky;top:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 28px;
-  height:60px;
-  background:rgba(6,0,16,0.88);
+  height:66px;
+  background:rgba(6,0,16,0.92);
   backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,0.07);
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 .hdr-logo{
   font-family:'Syne',sans-serif;
   font-weight:800;
-  font-size:1.15rem;
+  font-size:1.2rem;
   letter-spacing:-0.01em;
   color:#fff;
   text-transform:uppercase;
   display:flex;align-items:center;gap:2px;
+  flex-shrink:0;
 }
 .hdr-logo em{
   font-style:normal;
   color:#FF2CF2;
   text-shadow:0 0 12px rgba(255,44,242,0.7);
 }
-.hdr-cta{
-  font-family:'DM Mono',monospace;
-  font-size:0.75rem;
-  color:rgba(232,224,245,0.55);
-  border:1px solid rgba(255,255,255,0.12);
-  padding:6px 14px;
-  border-radius:999px;
-  transition:all 0.15s;
+.hdr-nav{
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
-.hdr-cta:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
+.hdr-nav-link{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:0.88rem;
+  color:#4D9FFF;
+  text-shadow:0 0 10px rgba(77,159,255,0.45);
+  padding:7px 14px;
+  border-radius:8px;
+  border:1px solid rgba(77,159,255,0.2);
+  background:rgba(77,159,255,0.06);
+  transition:all 0.15s;
+  white-space:nowrap;
+}
+.hdr-nav-link:hover{
+  color:#fff;
+  background:rgba(77,159,255,0.15);
+  border-color:rgba(77,159,255,0.5);
+  text-shadow:0 0 14px rgba(77,159,255,0.7);
+}
+.hdr-cta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:0.88rem;
+  color:#fff;
+  background:#4D9FFF;
+  border:1px solid #4D9FFF;
+  padding:7px 16px;
+  border-radius:8px;
+  transition:all 0.15s;
+  white-space:nowrap;
+  box-shadow:0 0 16px rgba(77,159,255,0.35);
+}
+.hdr-cta:hover{
+  background:#6BAFFF;
+  border-color:#6BAFFF;
+  box-shadow:0 0 24px rgba(77,159,255,0.6);
+}
 
 /* ─ filter bar ─ */
 .filters{
-  position:sticky;top:60px;z-index:90;
+  position:sticky;top:66px;z-index:90;
   background:rgba(6,0,16,0.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(255,255,255,0.07);
@@ -632,9 +665,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </head>
 <body><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NightClub", "name": "Salazar", "url": "https://dcdanceguide.com/salazar.html", "image": "https://images.getbento.com/accounts/d5a076c42d8e032f1e81d08b613b06f9/media/images/98200_TES3113.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.58&fp-y=0.43", "description": "Salazar in U Street Corridor, DC. multi-floor transitions from taco spot by day to four-bar dance destination by night.", "address": {"@type": "PostalAddress", "addressLocality": "Washington", "addressRegion": "DC", "addressCountry": "US"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Directory", "item": "https://dcdanceguide.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Salazar", "item": "https://dcdanceguide.com/salazar.html"}]}</script><header class="hdr">
   <a href="/" class="hdr-logo">DC<em>DANCE</em>GUIDE</a>
-  <nav style="display:flex;align-items:center;gap:16px">
-    <a href="/guides" style="font-family:'DM Mono',monospace;font-size:0.75rem;color:rgba(232,224,245,0.55);transition:color 0.14s" onmouseover="this.style.color='#FFEE00'" onmouseout="this.style.color='rgba(232,224,245,0.55)'">Guides &amp; Tips</a>
-    <a href="/subscribe" style="font-family:'DM Mono',monospace;font-size:0.75rem;color:rgba(232,224,245,0.55);transition:color 0.14s" onmouseover="this.style.color='#FF2CF2'" onmouseout="this.style.color='rgba(232,224,245,0.55)'">Newsletter</a>
+  <nav class="hdr-nav">
+    <a href="/guides" class="hdr-nav-link">Guides &amp; Tips</a>
+    <a href="/subscribe" class="hdr-nav-link">Newsletter</a>
     <a href="/contact" class="hdr-cta">List your venue →</a>
   </nav>
 </header>
