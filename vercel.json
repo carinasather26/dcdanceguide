@@ -1,0 +1,158 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/9-30-club",
+      "destination": "/9-30-club.html"
+    },
+    {
+      "source": "/black-cat-dc9",
+      "destination": "/black-cat-dc9.html"
+    },
+    {
+      "source": "/bossa-bistro",
+      "destination": "/bossa-bistro.html"
+    },
+    {
+      "source": "/cafe-citron",
+      "destination": "/cafe-citron.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/culture",
+      "destination": "/culture.html"
+    },
+    {
+      "source": "/dans-cafe",
+      "destination": "/dans-cafe.html"
+    },
+    {
+      "source": "/decades",
+      "destination": "/decades.html"
+    },
+    {
+      "source": "/district-alley-on-h",
+      "destination": "/district-alley-on-h.html"
+    },
+    {
+      "source": "/echostage",
+      "destination": "/echostage.html"
+    },
+    {
+      "source": "/flash",
+      "destination": "/flash.html"
+    },
+    {
+      "source": "/focus-social-club",
+      "destination": "/focus-social-club.html"
+    },
+    {
+      "source": "/grand-central",
+      "destination": "/grand-central.html"
+    },
+    {
+      "source": "/guide-adams-morgan-nightlife-guide",
+      "destination": "/guide-adams-morgan-nightlife-guide.html"
+    },
+    {
+      "source": "/guide-best-house-techno-clubs-dc",
+      "destination": "/guide-best-house-techno-clubs-dc.html"
+    },
+    {
+      "source": "/guide-best-latin-clubs-dc",
+      "destination": "/guide-best-latin-clubs-dc.html"
+    },
+    {
+      "source": "/guide-best-rooftop-bars-dc-nightlife",
+      "destination": "/guide-best-rooftop-bars-dc-nightlife.html"
+    },
+    {
+      "source": "/guide-dc-clubs-open-after-2am",
+      "destination": "/guide-dc-clubs-open-after-2am.html"
+    },
+    {
+      "source": "/guide-dc-nightlife-dress-code-guide",
+      "destination": "/guide-dc-nightlife-dress-code-guide.html"
+    },
+    {
+      "source": "/guide-dc-nightlife-guide-first-timers",
+      "destination": "/guide-dc-nightlife-guide-first-timers.html"
+    },
+    {
+      "source": "/guide-free-cover-charge-dc-nightlife",
+      "destination": "/guide-free-cover-charge-dc-nightlife.html"
+    },
+    {
+      "source": "/guide-h-street-nightlife-guide",
+      "destination": "/guide-h-street-nightlife-guide.html"
+    },
+    {
+      "source": "/guide-u-street-corridor-nightlife-guide",
+      "destination": "/guide-u-street-corridor-nightlife-guide.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html"
+    },
+    {
+      "source": "/heaven-and-hell",
+      "destination": "/heaven-and-hell.html"
+    },
+    {
+      "source": "/jimmy-valentines-lonely-hearts-club",
+      "destination": "/jimmy-valentines-lonely-hearts-club.html"
+    },
+    {
+      "source": "/johnny-pistolas",
+      "destination": "/johnny-pistolas.html"
+    },
+    {
+      "source": "/little-miss-whiskey-s-golden-dollar",
+      "destination": "/little-miss-whiskey-s-golden-dollar.html"
+    },
+    {
+      "source": "/madams-organ",
+      "destination": "/madams-organ.html"
+    },
+    {
+      "source": "/nellies-sports-bar",
+      "destination": "/nellies-sports-bar.html"
+    },
+    {
+      "source": "/ocean-lounge-dc",
+      "destination": "/ocean-lounge-dc.html"
+    },
+    {
+      "source": "/salazar",
+      "destination": "/salazar.html"
+    },
+    {
+      "source": "/sax",
+      "destination": "/sax.html"
+    },
+    {
+      "source": "/subscribe",
+      "destination": "/subscribe.html"
+    },
+    {
+      "source": "/techo-palma-formerly-el-techo",
+      "destination": "/techo-palma-formerly-el-techo.html"
+    },
+    {
+      "source": "/the-park-at-14th",
+      "destination": "/the-park-at-14th.html"
+    },
+    {
+      "source": "/twelve-after-twelve",
+      "destination": "/twelve-after-twelve.html"
+    },
+    {
+      "source": "/zeba-bar",
+      "destination": "/zeba-bar.html"
+    }
+  ]
+}
